@@ -1,0 +1,461 @@
+export interface ServiceDetail {
+  id: string;
+  icon: string;
+  title: string;
+  shortDescription: string;
+  overview: string;
+  benefits: string[];
+  topics: { title: string; description: string }[];
+  conditionsTreated?: string[];
+  whenToConsult?: string[];
+  screeningServices?: string[];
+  recommendedVaccinations?: string[];
+  symptomsManaged?: string[];
+  options?: string[];
+  evaluationProcess?: string[];
+  healthAssessment?: string[];
+  recoveryAdvantages?: string[];
+  servicesOffered?: string[];
+}
+
+export interface SurgeryCard {
+  id: string;
+  icon: string;
+  title: string;
+  overview: string;
+  benefits: string[];
+  conditionsTreated: string[];
+  recoveryAdvantages: string[];
+}
+
+export const servicesList: ServiceDetail[] = [
+  {
+    id: 'adolescent-gynaecology',
+    icon: 'ri-flower-line',
+    title: 'Adolescent Gynaecology',
+    shortDescription: 'Compassionate and confidential gynecological care for adolescent girls and young women navigating puberty and reproductive health.',
+    overview: 'Adolescence is a critical period of physical and emotional development. Dr. Nikhita provides a safe, confidential, and non-judgmental environment where young women can discuss their concerns openly. From first-period guidance to managing menstrual disorders, PMOS in teens, and hormonal changes — we ensure every young patient receives age-appropriate, evidence-based care with sensitivity and respect.',
+    benefits: [
+      'Confidential and judgment-free consultations for adolescent girls',
+      'Early diagnosis and management of PMOS in teenagers',
+      'Education on menstrual health and normal development',
+      'Age-appropriate communication that empowers young patients',
+      'Long-term health foundation through preventive adolescent care',
+    ],
+    topics: [
+      { title: 'Puberty Concerns', description: 'Guidance on physical changes, menstrual onset, breast development, and what to expect during puberty with reassurance and accurate information.' },
+      { title: 'Menstrual Disorders', description: 'Evaluation and treatment of irregular periods, heavy bleeding, painful periods, and amenorrhea in adolescents with personalized care plans.' },
+      { title: 'PMOS', description: 'Early detection and comprehensive management of Polycystic Metabolic Ovary Syndrome in teenage girls including lifestyle guidance, hormonal assessment, and treatment.' },
+      { title: 'Hormonal Changes', description: 'Understanding and managing hormonal fluctuations during adolescence including acne, mood changes, and weight concerns with a holistic approach.' },
+      { title: 'Adolescent Wellness', description: 'Promoting overall health through nutrition guidance, hygiene education, emotional well-being support, and healthy lifestyle habits for teenage girls.' },
+    ],
+    conditionsTreated: [
+      'Irregular menstrual cycles',
+      'Dysmenorrhea (painful periods)',
+      'Menorrhagia (heavy bleeding)',
+      'Polycystic Metabolic Ovary Syndrome (PMOS)',
+      'Delayed or early puberty',
+      'Hormonal acne and related concerns',
+    ],
+    whenToConsult: [
+      'First menstrual period guidance and education',
+      'Periods that are very painful or irregular for more than 3 months',
+      'Heavy bleeding that interferes with daily activities',
+      'Signs of hormonal imbalance like excessive acne or hair growth',
+      'Missed periods for more than 3 months (not due to pregnancy)',
+      'Any gynecological concern or question — no issue is too small',
+    ],
+  },
+  {
+    id: 'pre-pregnancy-checkup',
+    icon: 'ri-heart-pulse-line',
+    title: 'Pre-Pregnancy Check-Up',
+    shortDescription: 'Comprehensive pre-conception health assessment to ensure you are in optimal health before embarking on your pregnancy journey.',
+    overview: 'Planning a pregnancy is one of the most important health decisions a woman can make. Our pre-pregnancy check-up is a thorough health assessment designed to identify and address any potential issues before conception. Dr. Nikhita evaluates your overall health, reviews medical history, conducts necessary screenings, and provides personalized guidance on nutrition, lifestyle, and any existing medical conditions — ensuring you enter pregnancy in the best possible health for both you and your future baby.',
+    benefits: [
+      'Early identification and management of health conditions that could affect pregnancy',
+      'Optimized nutrition and supplementation including folic acid',
+      'Personalized lifestyle recommendations for a healthy conception',
+      'Peace of mind knowing you are medically prepared for pregnancy',
+      'Reduced risk of pregnancy complications through proactive planning',
+    ],
+    topics: [
+      { title: 'Health Screening', description: 'Comprehensive blood work, genetic screening if indicated, thyroid function tests, immunity status check for rubella and varicella, and diabetes screening.' },
+      { title: 'Nutrition Assessment', description: 'Detailed evaluation of your diet and nutritional status with personalized recommendations including essential supplements like folic acid, iron, and vitamin D.' },
+      { title: 'Medical History Review', description: 'Thorough review of your personal and family medical history to identify any risk factors that may need special attention during pregnancy.' },
+      { title: 'Pregnancy Planning', description: 'Creating a personalized roadmap for your pregnancy journey including timing, lifestyle adjustments, medication reviews, and specialist referrals if needed.' },
+    ],
+    healthAssessment: [
+      'Complete blood count and hemoglobin levels',
+      'Blood group and Rh factor',
+      'Thyroid function tests',
+      'Blood sugar screening',
+      'Immunity status for rubella and other infections',
+      'Genetic carrier screening where appropriate',
+      'Pelvic examination and Pap smear if due',
+    ],
+    whenToConsult: [
+      'At least 3 months before you plan to start trying to conceive',
+      'If you have any existing medical conditions like diabetes, thyroid disorders, or hypertension',
+      'If you have a history of previous pregnancy complications',
+      'If you are over 35 and planning pregnancy',
+      'If you have irregular menstrual cycles or known fertility concerns',
+    ],
+  },
+  {
+    id: 'pregnancy-care',
+    icon: 'ri-user-heart-line',
+    title: 'Pregnancy Care',
+    shortDescription: 'Complete antenatal, delivery, and postnatal care with personalized attention for a healthy pregnancy and safe delivery.',
+    overview: 'Pregnancy is a transformative journey, and having the right medical partner makes all the difference. Dr. Nikhita provides comprehensive pregnancy care from the first positive test through delivery and beyond. With extensive experience in both normal and high-risk pregnancies, she ensures every expectant mother receives individualized attention, thorough monitoring, and evidence-based care. Her calm, reassuring approach combined with clinical expertise helps you navigate pregnancy with confidence and joy.',
+    benefits: [
+      'Personalized antenatal care plan tailored to your health profile',
+      'Regular monitoring of fetal growth and maternal well-being',
+      'Expert management of pregnancy-related conditions',
+      'Clear communication about every stage of your pregnancy journey',
+      'Continuity of care — the same doctor from conception to delivery',
+      'Seamless coordination with the best hospitals for delivery',
+    ],
+    topics: [
+      { title: 'Antenatal Care', description: 'Regular scheduled check-ups including blood pressure monitoring, weight tracking, fetal heartbeat checks, growth measurements, and all necessary investigations at each trimester.' },
+      { title: 'Pregnancy Monitoring', description: 'Serial ultrasound scans to monitor fetal growth, amniotic fluid levels, placental position, and overall fetal well-being throughout your pregnancy.' },
+      { title: 'High-Risk Pregnancy', description: 'Specialized care for pregnancies complicated by hypertension, gestational diabetes, thyroid disorders, multiple pregnancy, previous cesarean, advanced maternal age, and other medical conditions.' },
+      { title: 'Delivery Planning', description: 'Comprehensive birth planning including discussion of delivery options, pain management preferences, birth partner involvement, and contingency planning for a safe and positive delivery experience.' },
+      { title: 'Postnatal Care', description: 'Follow-up care after delivery including recovery monitoring, breastfeeding support, emotional well-being assessment, contraception counseling, and guidance on newborn care.' },
+    ],
+    servicesOffered: [
+      'Complete antenatal check-ups with ultrasound',
+      'High-risk pregnancy management',
+      'Gestational diabetes and hypertension care',
+      'Normal vaginal delivery',
+      'Cesarean section when medically indicated',
+      'Postnatal follow-up and breastfeeding support',
+    ],
+    whenToConsult: [
+      'As soon as you have a positive pregnancy test',
+      'For routine antenatal visits throughout pregnancy',
+      'If you experience bleeding, severe pain, or reduced fetal movements',
+      'If you have any pre-existing medical conditions',
+      'For preconception counseling before planning pregnancy',
+    ],
+  },
+  {
+    id: 'gynaecological-expertise',
+    icon: 'ri-psychotherapy-line',
+    title: 'Gynaecological Expertise',
+    shortDescription: 'Expert diagnosis and comprehensive treatment for a full spectrum of gynecological conditions affecting women of all ages.',
+    overview: 'Women experience unique health challenges throughout their lives, and expert gynecological care is essential for maintaining well-being. Dr. Nikhita brings over 12 years of experience in diagnosing and treating a wide range of gynecological conditions — from common issues like PMOS and menstrual disorders to complex conditions like fibroids and pelvic pain. Her approach combines thorough investigation with personalized treatment plans that respect each woman\'s individual needs, preferences, and health goals.',
+    benefits: [
+      'Accurate diagnosis through comprehensive clinical evaluation and advanced diagnostics',
+      'Personalized treatment plans considering your age, symptoms, and fertility goals',
+      'Both medical and surgical management options discussed transparently',
+      'Long-term follow-up to ensure sustained improvement and health',
+      'Evidence-based care aligned with the latest international guidelines',
+    ],
+    topics: [
+      { title: 'PMOS', description: 'Comprehensive management of Polycystic Metabolic Ovary Syndrome including lifestyle modification, weight management, hormonal regulation, ovulation induction when needed, and long-term health monitoring.' },
+      { title: 'Fibroids', description: 'Diagnosis and treatment of uterine fibroids through medication, minimally invasive procedures, or surgery depending on size, symptoms, location, and your fertility plans.' },
+      { title: 'Ovarian Cysts', description: 'Evaluation and management of ovarian cysts — simple, complex, or endometriotic — with close monitoring and surgical intervention when clinically indicated.' },
+      { title: 'Menstrual Disorders', description: 'Investigation and treatment of irregular, heavy, painful, or absent periods through hormonal regulation, medication, and procedural interventions as needed.' },
+      { title: 'Hormonal Disorders', description: 'Diagnosis and management of thyroid disorders, prolactin abnormalities, premature ovarian insufficiency, and other endocrine conditions affecting reproductive health.' },
+      { title: 'Pelvic Pain', description: 'Thorough evaluation of acute and chronic pelvic pain including endometriosis, adenomyosis, pelvic inflammatory disease, and adhesions with integrated pain management strategies.' },
+    ],
+    conditionsTreated: [
+      'Polycystic Metabolic Ovary Syndrome (PMOS)',
+      'Uterine fibroids (leiomyomas)',
+      'Ovarian cysts — simple and complex',
+      'Endometriosis and adenomyosis',
+      'Abnormal uterine bleeding',
+      'Pelvic inflammatory disease',
+      'Uterine prolapse and pelvic floor disorders',
+      'Vulvar and vaginal infections',
+    ],
+    whenToConsult: [
+      'Irregular, heavy, or painful periods affecting your daily life',
+      'Pelvic pain or discomfort that persists or worsens',
+      'Unusual vaginal discharge, itching, or odor',
+      'Pain during intercourse',
+      'Difficulty conceiving for more than 6-12 months',
+      'Any lump, swelling, or abnormality in the pelvic or breast area',
+      'Annual well-woman check-up for preventive care',
+    ],
+  },
+  {
+    id: 'minimal-invasive-surgery',
+    icon: 'ri-surgical-mask-line',
+    title: 'Minimal Invasive Surgery',
+    shortDescription: 'Advanced laparoscopic and hysteroscopic surgical procedures offering faster recovery, minimal scarring, and excellent outcomes.',
+    overview: 'Minimally invasive surgery has revolutionized gynecological care, and Dr. Nikhita is a trained expert in these advanced techniques. Her Fellowship in Minimal Invasive Surgery (FMIS) and extensive experience enable her to perform complex procedures through tiny incisions — meaning less pain, shorter hospital stays, faster recovery, and minimal scarring. Whether it is a diagnostic procedure or a major surgery, the minimally invasive approach prioritizes your comfort and quick return to normal life while achieving the best possible surgical outcomes.',
+    benefits: [
+      'Significantly smaller incisions and minimal visible scarring',
+      'Reduced post-operative pain and lower need for pain medication',
+      'Shorter hospital stay — often same-day discharge',
+      'Faster return to work and normal daily activities',
+      'Lower risk of surgical site infection and complications',
+      'Less blood loss during surgery',
+      'Better cosmetic results and patient satisfaction',
+    ],
+    topics: [],
+    conditionsTreated: [],
+    whenToConsult: [
+      'When medication and conservative treatments have not resolved the condition',
+      'For definitive diagnosis of unexplained pelvic pain or infertility',
+      'When imaging suggests a surgically treatable condition',
+      'For fibroids, ovarian cysts, or endometriosis requiring surgical management',
+      'When hysterectomy is medically indicated',
+    ],
+  },
+  {
+    id: 'fertility-care',
+    icon: 'ri-seedling-line',
+    title: 'Fertility Care',
+    shortDescription: 'Compassionate fertility evaluation, counseling, and personalized treatment for couples trying to conceive.',
+    overview: 'The journey to parenthood can sometimes be challenging, and having the right fertility specialist makes a profound difference. Dr. Nikhita approaches fertility care with deep compassion, scientific rigor, and a commitment to exploring every option. With her Fellowship in Reproductive Medicine (FRM), she provides comprehensive fertility evaluation, honest counseling, and evidence-based treatment planning. She believes in starting with the least invasive approaches and progressively exploring options — always keeping your emotional well-being at the center of care.',
+    benefits: [
+      'Systematic evaluation to identify the root cause of fertility challenges',
+      'Personalized treatment plans starting with the least invasive options',
+      'Honest, compassionate counseling about your chances and options',
+      'Coordination with advanced fertility centers when IVF or advanced procedures are needed',
+      'Emotional support throughout the fertility journey',
+    ],
+    topics: [
+      { title: 'Infertility Evaluation', description: 'Comprehensive assessment including hormonal profiling, ovulation tracking, ultrasound evaluation of ovaries and uterus, tubal patency testing, and semen analysis for male partners.' },
+      { title: 'Fertility Counselling', description: 'Honest and compassionate discussions about your fertility status, treatment options, success rates, lifestyle modifications, and emotional preparation for the journey ahead.' },
+      { title: 'Treatment Planning', description: 'Structured treatment plan including ovulation induction with timed intercourse, cycle monitoring, hormonal support, and coordination with ART centers for IUI or IVF when appropriate.' },
+      { title: 'Reproductive Health Assessment', description: 'Thorough evaluation of reproductive organs through ultrasound, hormonal testing, and other diagnostic tools to ensure optimal reproductive function.' },
+    ],
+    evaluationProcess: [
+      'Detailed medical and reproductive history',
+      'Hormonal profile — FSH, LH, AMH, thyroid, prolactin',
+      'Pelvic ultrasound for ovarian reserve and uterine assessment',
+      'Ovulation monitoring and tracking',
+      'Tubal patency evaluation (HSG or sonosalpingography)',
+      'Male partner semen analysis',
+      'Lifestyle and nutritional assessment',
+    ],
+    whenToConsult: [
+      'If you have been trying to conceive for 12 months without success (under 35)',
+      'If you have been trying for 6 months without success (over 35)',
+      'If you have irregular periods or known ovulatory disorders',
+      'If you have a history of miscarriage or pregnancy loss',
+      'If you have known conditions like PMOS, endometriosis, or fibroids',
+      'If you are over 40 and considering pregnancy',
+    ],
+  },
+  {
+    id: 'family-planning',
+    icon: 'ri-calendar-check-line',
+    title: 'Family Planning',
+    shortDescription: 'Personalized contraception counseling and reproductive life planning to help you make informed choices about your family.',
+    overview: 'Family planning is about empowerment — giving women the knowledge and tools to decide if, when, and how many children to have. Dr. Nikhita provides unbiased, comprehensive counseling on all available contraceptive options, helping you choose the method that best fits your health profile, lifestyle, and future reproductive goals. Whether you are looking for short-term contraception, long-acting reversible options, or permanent solutions, you will receive honest information and respectful care to make the decision that is right for you.',
+    benefits: [
+      'Access to the full range of contraceptive options with honest counseling',
+      'Improved health outcomes through birth spacing and planned pregnancies',
+      'Reduced risk of unintended pregnancy and associated health risks',
+      'Empowerment through informed reproductive decision-making',
+      'Integration with your overall health and wellness plan',
+    ],
+    topics: [
+      { title: 'Contraception Counselling', description: 'One-on-one counseling on all contraceptive methods — oral pills, injectables, implants, intrauterine devices (copper and hormonal IUDs), barrier methods, and permanent sterilization — with detailed discussion of effectiveness, side effects, and suitability.' },
+      { title: 'Birth Spacing', description: 'Evidence-based guidance on optimal spacing between pregnancies for maternal and child health, including postpartum contraception planning.' },
+      { title: 'Reproductive Planning', description: 'Helping you create a personalized reproductive life plan that aligns with your personal, professional, and health goals.' },
+      { title: "Women's Health Guidance", description: 'Integrating family planning with overall gynecological care including cycle regulation, hormonal balance, and preventive health.' },
+    ],
+    options: [
+      'Oral contraceptive pills (combined and progestin-only)',
+      'Contraceptive implants (subdermal)',
+      'Copper intrauterine device (Cu-IUD)',
+      'Hormonal intrauterine device (LNG-IUS)',
+      'Injectable contraceptives',
+      'Barrier methods and natural family planning',
+      'Permanent sterilization (tubal ligation) when family is complete',
+    ],
+    whenToConsult: [
+      'When you want to discuss or start contraception',
+      'Before planning to conceive — to optimize pre-pregnancy health',
+      'After delivery — for postpartum contraception planning',
+      'If you are experiencing side effects from your current contraceptive method',
+      'When considering a change in your family planning approach',
+      'For preconception counseling and health optimization',
+    ],
+  },
+  {
+    id: 'preventive-health',
+    icon: 'ri-shield-check-line',
+    title: "Preventive Women's Health & Cancer Screening",
+    shortDescription: 'Proactive preventive healthcare including cancer screening, routine check-ups, and wellness assessments for women.',
+    overview: 'Prevention is the most powerful tool in women\'s healthcare. Many serious conditions — including cervical and breast cancer — can be detected early or even prevented entirely with proper screening. Dr. Nikhita emphasizes preventive care as the foundation of lifelong health. Through regular check-ups, age-appropriate cancer screening, and health assessments, she helps you stay ahead of potential health issues. Early detection saves lives, and our comprehensive screening programs are designed to catch problems when they are most treatable.',
+    benefits: [
+      'Early detection of cervical, breast, and other cancers when treatment is most effective',
+      'Prevention of cervical cancer through regular Pap smears and HPV testing',
+      'Comprehensive health assessment identifying risk factors before they become problems',
+      'Peace of mind through regular professional health monitoring',
+      'Personalized preventive plan based on your age, family history, and risk factors',
+    ],
+    topics: [
+      { title: 'Routine Check-Ups', description: 'Annual well-woman examinations including blood pressure, weight, breast examination, pelvic examination, and overall health assessment to establish baselines and catch changes early.' },
+      { title: 'Cervical Cancer Screening', description: 'Pap smear testing to detect precancerous changes in cervical cells, HPV testing where indicated, and colposcopy if abnormalities are found — following international screening guidelines.' },
+      { title: 'Breast Health Awareness', description: 'Clinical breast examination, education on breast self-awareness, and guidance on mammography timing based on age and risk factors for early detection of breast abnormalities.' },
+      { title: 'Preventive Healthcare', description: 'Comprehensive preventive approach including blood sugar and cholesterol screening, bone density assessment when indicated, thyroid function monitoring, and lifestyle counseling for long-term wellness.' },
+    ],
+    screeningServices: [
+      'Pap smear (cervical cytology)',
+      'HPV DNA testing',
+      'Clinical breast examination',
+      'Pelvic ultrasound for ovarian and uterine evaluation',
+      'Blood pressure and cardiovascular risk assessment',
+      'Blood sugar and HbA1c screening for diabetes',
+      'Lipid profile for cholesterol monitoring',
+      'Thyroid function testing',
+      'Bone density assessment (when indicated)',
+    ],
+    whenToConsult: [
+      'For annual well-woman check-up — recommended for all women',
+      'Starting Pap smears from age 21 or within 3 years of becoming sexually active',
+      'If you notice any breast lump, nipple discharge, or skin changes',
+      'If you have a family history of breast, ovarian, or cervical cancer',
+      'For any unexplained weight loss, fatigue, or persistent symptoms',
+    ],
+  },
+  {
+    id: 'vaccinations',
+    icon: 'ri-syringe-line',
+    title: 'Vaccinations for Women & Adolescent Girls',
+    shortDescription: 'Essential vaccinations and immunization guidance for women and adolescent girls to protect long-term health.',
+    overview: 'Vaccination is one of the most effective preventive health measures available, yet many women are unaware of the vaccines recommended specifically for them. From the HPV vaccine that prevents cervical cancer to the rubella vaccine that protects future pregnancies, immunization plays a crucial role in women\'s health. Dr. Nikhita provides comprehensive vaccination guidance, administers recommended vaccines, and ensures you and your adolescent daughters are protected against preventable diseases that can have serious consequences for women\'s reproductive and overall health.',
+    benefits: [
+      'Protection against cervical cancer through HPV vaccination',
+      'Prevention of rubella infection during pregnancy that can cause birth defects',
+      'Reduced risk of hepatitis B transmission to newborns',
+      'Protection against tetanus for both mother and baby',
+      'Long-term immunity against preventable infectious diseases',
+    ],
+    topics: [
+      { title: 'HPV Vaccination', description: 'The human papillomavirus vaccine protects against the strains of HPV that cause cervical cancer, genital warts, and other HPV-related cancers. Recommended for girls and women aged 9-45 years.' },
+      { title: 'Adolescent Vaccination', description: 'Essential vaccines for adolescent girls including HPV, tetanus-diphtheria booster, MMR if not previously immune, and varicella if not previously infected.' },
+      { title: "Women's Preventive Vaccination", description: 'Adult vaccination schedule including rubella for women planning pregnancy, hepatitis B, influenza during pregnancy, Tdap during each pregnancy, and COVID-19 vaccination.' },
+      { title: 'Health Protection', description: 'Comprehensive immunization strategy tailored to your age, health status, occupation, travel plans, and reproductive goals for maximum protection.' },
+    ],
+    recommendedVaccinations: [
+      'HPV vaccine — protects against cervical cancer (ages 9-45)',
+      'Rubella (MMR) — critical before pregnancy to prevent congenital rubella syndrome',
+      'Tdap — tetanus, diphtheria, and pertussis during each pregnancy',
+      'Hepatitis B — prevents liver infection and transmission to newborns',
+      'Influenza vaccine — recommended annually, especially during pregnancy',
+      'Varicella — if not previously infected, important before pregnancy',
+      'COVID-19 vaccine — recommended for all women including pregnant women',
+    ],
+    whenToConsult: [
+      'For adolescent girls aged 9-14 — ideal window for HPV vaccination',
+      'At least 1-3 months before planning pregnancy — for rubella and varicella immunity check',
+      'During pregnancy — for Tdap and influenza vaccination',
+      'For adult women who never received HPV vaccine — catch-up through age 45',
+      'Annually for influenza vaccine review',
+    ],
+  },
+  {
+    id: 'menopausal-care',
+    icon: 'ri-leaf-line',
+    title: 'Menopausal Care & Support',
+    shortDescription: 'Comprehensive menopause management helping women navigate this natural transition with confidence, comfort, and vitality.',
+    overview: 'Menopause is a natural phase of life, not a medical condition — but the physical and emotional changes it brings can significantly impact quality of life. Dr. Nikhita provides comprehensive menopausal care that addresses the full spectrum of symptoms while focusing on long-term health. From hormonal and non-hormonal treatment options for hot flashes and sleep disturbances to bone health protection and cardiovascular risk management, her approach ensures you navigate menopause feeling informed, supported, and empowered to live your healthiest life.',
+    benefits: [
+      'Effective management of vasomotor symptoms like hot flashes and night sweats',
+      'Protection of bone health and prevention of osteoporosis',
+      'Improved sleep quality and management of insomnia',
+      'Support for emotional well-being including mood changes and anxiety',
+      'Long-term cardiovascular risk assessment and management',
+      'Personalized approach — hormonal therapy only when appropriate and desired',
+    ],
+    topics: [
+      { title: 'Menopause Management', description: 'Comprehensive treatment options including hormone replacement therapy (HRT) when appropriate, non-hormonal medications, and lifestyle interventions — fully personalized to your symptoms and preferences.' },
+      { title: 'Hormonal Changes', description: 'Understanding the hormonal shifts during perimenopause and menopause, their effects on your body, and how to manage them effectively through medical and lifestyle approaches.' },
+      { title: 'Bone Health', description: 'Bone density screening, calcium and vitamin D optimization, weight-bearing exercise guidance, and medication when indicated to prevent osteoporosis and fractures.' },
+      { title: 'Lifestyle Support', description: 'Nutrition guidance for metabolic health, exercise recommendations, stress management techniques, sleep hygiene, and strategies for maintaining vitality and well-being.' },
+      { title: 'Long-Term Wellness', description: 'Ongoing health monitoring including cardiovascular risk assessment, metabolic screening, cancer screening, and preventive care to ensure long-term health beyond menopause.' },
+    ],
+    symptomsManaged: [
+      'Hot flashes and night sweats',
+      'Sleep disturbances and insomnia',
+      'Mood changes, irritability, and anxiety',
+      'Vaginal dryness and discomfort',
+      'Decreased libido and sexual health concerns',
+      'Weight gain and metabolic changes',
+      'Joint pain and muscle aches',
+      'Brain fog and concentration difficulties',
+      'Urinary symptoms including frequency and urgency',
+    ],
+    whenToConsult: [
+      'When perimenopausal symptoms begin to affect your quality of life',
+      'If you are experiencing irregular periods in your 40s',
+      'For hot flashes, night sweats, or sleep problems that interfere with daily activities',
+      'For bone density assessment around menopause',
+      'If you are experiencing mood changes, anxiety, or depression during perimenopause',
+      'To discuss whether hormone therapy is right for you',
+    ],
+  },
+];
+
+export const surgeryCards: SurgeryCard[] = [
+  {
+    id: 'laparoscopic-surgery',
+    icon: 'ri-surgical-mask-line',
+    title: 'Laparoscopic Surgery',
+    overview: 'Laparoscopic surgery uses a thin, lighted camera (laparoscope) inserted through small incisions in the abdomen to visualize, diagnose, and treat various gynecological conditions with precision. Dr. Nikhita performs a wide range of laparoscopic procedures including hysterectomy, fibroid removal (myomectomy), ovarian cyst removal, endometriosis treatment, and diagnostic laparoscopy for unexplained pelvic pain or infertility. This approach avoids large abdominal incisions, resulting in significantly less post-operative pain and faster recovery.',
+    benefits: [
+      'Small incisions (5-10mm) instead of large abdominal cuts',
+      'Reduced hospital stay — often discharged the same day',
+      'Faster return to normal activities — typically 1-2 weeks vs 4-6 weeks for open surgery',
+      'Less post-operative pain and reduced need for pain medication',
+      'Minimal blood loss and lower transfusion requirements',
+      'Better cosmetic results with barely visible scars',
+    ],
+    conditionsTreated: [
+      'Uterine fibroids — laparoscopic myomectomy',
+      'Ovarian cysts — laparoscopic cystectomy',
+      'Endometriosis — laparoscopic excision and ablation',
+      'Ectopic pregnancy — laparoscopic management',
+      'Tubal patency assessment for infertility',
+      'Pelvic adhesions — laparoscopic adhesiolysis',
+      'Total laparoscopic hysterectomy',
+      'Diagnostic laparoscopy for unexplained pelvic pain',
+    ],
+    recoveryAdvantages: [
+      'Hospital stay: usually same-day discharge or 24 hours',
+      'Return to work: 1-2 weeks for desk jobs',
+      'Full activity: 2-4 weeks vs 6-8 weeks for open surgery',
+      'Pain management: oral medications for 2-3 days typically',
+      'Scarring: 2-3 tiny scars (5-10mm each) that fade over time',
+    ],
+  },
+  {
+    id: 'hysteroscopic-surgery',
+    icon: 'ri-camera-line',
+    title: 'Hysteroscopic Surgery',
+    overview: 'Hysteroscopic surgery involves inserting a thin telescope (hysteroscope) through the vagina and cervix into the uterus — requiring no external incisions at all. This scarless approach allows Dr. Nikhita to diagnose and treat conditions inside the uterine cavity with remarkable precision. From removing polyps and fibroids to treating abnormal bleeding and uterine adhesions, hysteroscopic surgery offers the ultimate in minimally invasive care — no cuts, no scars, and the fastest possible recovery.',
+    benefits: [
+      'Absolutely no external incisions — completely scarless surgery',
+      'Performed through natural openings — vagina and cervix',
+      'No hospital stay — always an outpatient procedure',
+      'Rapid recovery — most women resume normal activities within 24-48 hours',
+      'Minimal to no post-operative pain',
+      'Preserves uterine integrity for future fertility',
+    ],
+    conditionsTreated: [
+      'Endometrial polyps — hysteroscopic polypectomy',
+      'Submucous fibroids — hysteroscopic myomectomy',
+      'Uterine septum — hysteroscopic septal resection',
+      'Intrauterine adhesions (Asherman syndrome) — hysteroscopic adhesiolysis',
+      'Abnormal uterine bleeding — diagnostic hysteroscopy with biopsy',
+      'Retained products of conception — hysteroscopic removal',
+      'Endometrial ablation for heavy menstrual bleeding',
+    ],
+    recoveryAdvantages: [
+      'No hospital stay — always day-care procedure',
+      'Return to work: 1-2 days for most women',
+      'Full activity: 3-5 days typically',
+      'Pain management: minimal — over-the-counter pain relief usually sufficient',
+      'No visible scars — procedure leaves no external marks',
+    ],
+  },
+];
