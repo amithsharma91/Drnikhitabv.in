@@ -46,7 +46,7 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Book Appointment">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-foreground-900/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-foreground-900/60"
         onClick={onClose}
       ></div>
 
