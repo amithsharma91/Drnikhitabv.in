@@ -38,7 +38,7 @@ export default function VaccinationsCTA({ onBookAppointment }: VaccinationsCTAPr
               href="https://wa.me/918050816686"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-3.5 bg-white/15 backdrop-blur-sm border border-white/30 text-white rounded-full text-sm md:text-base font-semibold hover:bg-white/25 transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105"
+              className="w-full sm:w-auto px-8 py-3.5 bg-white/15 border border-white/30 text-white rounded-full text-sm md:text-base font-semibold hover:bg-white/25 transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105"
             >
               <i className="ri-whatsapp-line mr-2"></i>
               WhatsApp Now
