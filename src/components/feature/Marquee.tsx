@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 
 interface MarqueeProps {
@@ -9,28 +8,42 @@ interface MarqueeProps {
   gap?: number;
 }
 
+const MIN_DUPLICATES = 3;
+const MAX_DUPLICATES = 50;
+
 export default function Marquee({
   children,
-  speed = 30,
+  speed = 18,
   pauseOnHover = true,
   direction = 'left',
   gap = 24,
 }: MarqueeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [duplicates, setDuplicates] = useState(2);
+  const [duplicates, setDuplicates] = useState(MIN_DUPLICATES);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    const raf = requestAnimationFrame(() => {
+      const container = containerRef.current;
+      if (!container) return;
 
-    const content = container.firstElementChild;
-    if (!content) return;
+      const content = container.firstElementChild;
+      if (!content) return;
 
-    const containerWidth = container.offsetWidth;
-    const contentWidth = content.scrollWidth;
-    const needed = Math.ceil((containerWidth / contentWidth) * 2) + 1;
-    setDuplicates(Math.max(needed, 2));
+      const containerWidth = container.offsetWidth;
+      const contentWidth = content.scrollWidth;
+
+      if (containerWidth <= 0 || contentWidth <= 0) {
+        setDuplicates(MIN_DUPLICATES);
+        return;
+      }
+
+      const needed = Math.ceil((containerWidth / contentWidth) * 2) + 1;
+      const safeNeeded = Math.min(Math.max(needed, MIN_DUPLICATES), MAX_DUPLICATES);
+      setDuplicates(safeNeeded);
+    });
+
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   const directionStyle = direction === 'left' ? 'normal' : 'reverse';
@@ -42,16 +55,10 @@ export default function Marquee({
       onMouseEnter={() => pauseOnHover && setIsPaused(true)}
       onMouseLeave={() => pauseOnHover && setIsPaused(false)}
     >
-      <style>{`
-        @keyframes marquee-scroll {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-      `}</style>
       <div
-        className="flex items-center"
+        className="flex items-center will-change-transform"
         style={{
-          animation: `marquee-scroll ${speed}s linear infinite`,
+          animation: `marqueeScroll ${speed}s linear infinite`,
           animationDirection: directionStyle,
           animationPlayState: isPaused ? 'paused' : 'running',
           gap: `${gap}px`,
