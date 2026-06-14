@@ -10,15 +10,9 @@ export default function CTASection({ onBookAppointment }: CTASectionProps) {
 
   return (
     <section id="contact" className="relative py-20 md:py-28 overflow-hidden" aria-label="Book consultation">
-      {/* Animated background with floating gradients */}
+      {/* Animated background — static premium gradient, no floating */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 via-secondary-50/40 to-accent-100/30">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-200/20 via-transparent to-transparent"></div>
-        <div className="absolute top-0 left-0 w-full h-full animate-float" style={{ animationDuration: '15s' }}>
-          <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-primary-200/10 blur-[80px]" />
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full animate-float" style={{ animationDuration: '18s', animationDelay: '3s' }}>
-          <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-accent-200/10 blur-[80px]" />
-        </div>
       </div>
 
       <div
@@ -54,7 +48,7 @@ export default function CTASection({ onBookAppointment }: CTASectionProps) {
           <motion.button
             onClick={onBookAppointment}
             className="px-8 py-3.5 bg-primary-500 text-white rounded-full text-sm md:text-base font-semibold whitespace-nowrap cursor-pointer btn-luxury"
-            whileHover={{ scale: 1.05, y: -2, boxShadow: '0 8px 24px -6px rgba(216, 140, 165, 0.3)' }}
+            whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
           >
             <span className="inline-flex items-center gap-2">
@@ -67,7 +61,7 @@ export default function CTASection({ onBookAppointment }: CTASectionProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 bg-white border-2 border-foreground-200 text-foreground-800 rounded-full text-sm md:text-base font-semibold whitespace-nowrap cursor-pointer flex items-center gap-2 btn-luxury"
-            whileHover={{ scale: 1.05, y: -2, borderColor: 'rgba(216, 140, 165, 0.3)' }}
+            whileHover={{ scale: 1.02, y: -1, borderColor: 'rgba(216, 140, 165, 0.3)' }}
             whileTap={{ scale: 0.98 }}
           >
             <i className="ri-whatsapp-line text-green-600 text-lg"></i>
