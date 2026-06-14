@@ -4,11 +4,17 @@ export default function StickyCTA() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const formSection = document.getElementById('appointment-form');
-      if (!formSection) return;
-      const rect = formSection.getBoundingClientRect();
-      setVisible(rect.top > window.innerHeight || rect.bottom < -100);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const formSection = document.getElementById('appointment-form');
+        if (!formSection) { ticking = false; return; }
+        const rect = formSection.getBoundingClientRect();
+        setVisible(rect.top > window.innerHeight || rect.bottom < -100);
+        ticking = false;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -30,7 +36,7 @@ export default function StickyCTA() {
         visible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
     >
-      <div className="bg-white/95 backdrop-blur-xl border-t border-background-200 shadow-lg px-4 py-3">
+      <div className="bg-white border-t border-background-200 shadow-lg px-4 py-3">
         <div className="flex items-center gap-3 max-w-lg mx-auto">
           <a
             href="tel:+918050816686"
