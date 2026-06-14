@@ -1,61 +1,3 @@
-export const testimonialStats = {
-  rating: 4.9,
-  totalReviews: 100,
-  googleLogo: 'Google',
-  reviewBreakdown: [
-    { stars: 5, count: 92, percentage: 92 },
-    { stars: 4, count: 6, percentage: 6 },
-    { stars: 3, count: 2, percentage: 2 },
-    { stars: 2, count: 0, percentage: 0 },
-    { stars: 1, count: 0, percentage: 0 },
-  ],
-};
-
-export const categories = [
-  { id: 'all', label: 'All Stories' },
-  { id: 'pregnancy-care', label: 'Pregnancy Care' },
-  { id: 'high-risk-pregnancy', label: 'High-Risk Pregnancy' },
-  { id: 'laparoscopic-surgery', label: 'Laparoscopic Surgery' },
-  { id: 'fertility-support', label: 'Fertility Support' },
-  { id: 'compassionate-care', label: 'Compassionate Care' },
-];
-
-export const featuredTestimonials = [
-  {
-    name: 'Priya Sharma',
-    age: 32,
-    detail: 'High-Risk Pregnancy & Delivery Patient',
-    category: 'high-risk-pregnancy',
-    rating: 5,
-    highlight: 'Delivered a healthy baby at 38 weeks despite multiple complications',
-    text: 'I was diagnosed with gestational diabetes and hypertension early in my pregnancy. I was terrified and anxious about every step. Dr. Nikhita not only managed my conditions expertly but also gave me the emotional support I desperately needed. She monitored me closely, adjusted my treatment plan whenever needed, and was available on WhatsApp even late at night when I had concerns. My baby was delivered healthy at 38 weeks via a planned C-section, and the recovery has been smooth. I cannot imagine going through this pregnancy without her. She is not just a doctor — she became family to us during those nine months.',
-    date: 'March 2026',
-    avatarSeq: 'priya-sharma',
-  },
-  {
-    name: 'Anjali Rao',
-    age: 38,
-    detail: 'Laparoscopic Fibroid Surgery Patient',
-    category: 'laparoscopic-surgery',
-    rating: 5,
-    highlight: 'Minimally invasive surgery with 2-week recovery — back to normal life',
-    text: 'I had multiple large fibroids causing severe pain and heavy bleeding. Other doctors recommended open surgery. Dr. Nikhita reviewed my case and confidently said she could do it laparoscopically. The surgery took about 2 hours, I was walking the same evening, and discharged the next day. Within two weeks I was back to my normal routine. The scars are tiny — barely visible now. Her surgical skills are world-class, and what surprised me most was how she called personally every day during my first week of recovery to check on me. That level of care is rare.',
-    date: 'February 2026',
-    avatarSeq: 'anjali-rao',
-  },
-  {
-    name: 'Meera Patel',
-    age: 27,
-    detail: 'Fertility Support Patient',
-    category: 'fertility-support',
-    rating: 5,
-    highlight: 'Successfully conceived after 3 years of trying — now a mother of twins',
-    text: 'After three heartbreaking years of trying to conceive and seeing multiple fertility specialists, Dr. Nikhita was the first doctor who treated us like humans, not just another case. She spent over an hour in our first consultation, carefully reviewing every test, asking about our emotional state, and creating a step-by-step plan. She never pushed us toward expensive treatments unnecessarily. She started with the basics, explained everything clearly, and after six months of her guided treatment, we conceived naturally. Today I am a proud mother of twin boys. Every time I look at them, I think of Dr. Nikhita with immense gratitude.',
-    date: 'January 2026',
-    avatarSeq: 'meera-patel',
-  },
-];
-
 export const categorizedTestimonials = [
   {
     name: 'Lakshmi Venkatesh',
@@ -222,29 +164,5 @@ export const googleReviews = [
     text: 'Dr. Nikhita supported my VBAC (vaginal birth after cesarean) when many doctors discouraged it. She believed in me, prepared me well, and was there through 16 hours of labor. I achieved the natural birth I wanted. Forever thankful.',
     date: '3 months ago',
     platform: 'Google',
-  },
-];
-
-export const successStories = [
-  {
-    title: 'From Infertility to Twin Boys',
-    category: 'fertility-support',
-    icon: 'ri-seedling-line',
-    summary: 'After 3 years of heartbreak, systematic fertility care led to a natural conception and healthy twin delivery.',
-    detail: 'Meera and her husband had been trying to conceive for over three years. They had consulted multiple specialists, undergone several rounds of treatment elsewhere, and were emotionally and financially drained. When they came to Dr. Nikhita, she took a completely different approach — starting from the basics, reviewing every test thoroughly, and creating a step-by-step protocol. Within six months of her guided treatment, they conceived naturally. The pregnancy progressed smoothly under her care, and Meera delivered healthy twin boys at 37 weeks.',
-  },
-  {
-    title: 'Emergency C-Section That Saved Two Lives',
-    category: 'high-risk-pregnancy',
-    icon: 'ri-heart-pulse-line',
-    summary: 'Placenta previa at 34 weeks — rapid response and expert surgical care saved both mother and baby.',
-    detail: 'Revathi\'s pregnancy was progressing normally until her 28-week scan revealed complete placenta previa. Dr. Nikhita created a meticulous monitoring plan and prepared for every possible scenario. When Revathi experienced sudden bleeding at 34 weeks, she called Dr. Nikhita immediately. The doctor reached the hospital within 20 minutes, assembled the surgical team, and performed an emergency C-section with precision and calm. Both mother and baby came through safely, and the baby, though premature, is now thriving.',
-  },
-  {
-    title: 'Fibroid-Free and Pain-Free After Years of Suffering',
-    category: 'laparoscopic-surgery',
-    icon: 'ri-surgical-mask-line',
-    summary: 'Multiple large fibroids removed laparoscopically — minimal scarring and rapid recovery.',
-    detail: 'Bhavya had been suffering from fibroids for years — heavy bleeding, severe pain, and anemia that affected her quality of life. Multiple doctors had recommended open hysterectomy, which she was reluctant to undergo. Dr. Nikhita assessed her case and offered a laparoscopic approach. The surgery was successful, Bhavya walked the same day, was discharged on day two, and returned to her normal life within three weeks. The five tiny incisions have faded to near invisibility.',
   },
 ];
