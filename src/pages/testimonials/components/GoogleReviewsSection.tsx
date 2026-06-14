@@ -15,8 +15,7 @@ export default function GoogleReviewsSection() {
       {[1, 2, 3, 4, 5].map((star, i) => (
         <i
           key={star}
-          className={`ri-star-fill text-amber-400 text-sm ${animate ? 'animate-shimmer' : ''}`}
-          style={animate ? { animationDelay: `${i * 0.2}s` } : {}}
+          className="ri-star-fill text-amber-400 text-sm"
         ></i>
       ))}
     </div>
@@ -59,7 +58,7 @@ export default function GoogleReviewsSection() {
 
         {/* Marquee section for top reviews */}
         <div className="mb-10 md:mb-12">
-          <Marquee speed={40} pauseOnHover={true} gap={20}>
+          <Marquee speed={18} pauseOnHover={true} gap={20}>
             {googleReviews.slice(0, 5).map((review, index) => (
               <div
                 key={index}
