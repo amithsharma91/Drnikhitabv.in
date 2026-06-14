@@ -22,22 +22,28 @@ export default function Header({ onBookAppointment }: HeaderProps) {
       return;
     }
 
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 50);
 
-      const sections = menuItems
-        .filter(item => item.href.startsWith('#'))
-        .map(item => item.href.replace('#', ''));
-      for (const id of sections.reverse()) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 150) {
-            setActiveSection(id);
-            break;
+        const sections = menuItems
+          .filter(item => item.href.startsWith('#'))
+          .map(item => item.href.replace('#', ''));
+        for (const id of sections.reverse()) {
+          const el = document.getElementById(id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= 150) {
+              setActiveSection(id);
+              break;
+            }
           }
         }
-      }
+        ticking = false;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -78,7 +84,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/80 backdrop-blur-xl shadow-sm'
+          ? 'bg-white/95 backdrop-blur-sm shadow-sm'
           : 'bg-transparent'
       }`}
     >
@@ -115,7 +121,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
                         ? 'text-primary-600 bg-primary-50'
                         : isScrolled
                           ? 'text-foreground-600 hover:text-primary-600 hover:bg-primary-50'
-                          : 'text-foreground-700 hover:text-primary-600 hover:bg-primary-100/40'
+                          : 'text-white/90 hover:text-white hover:bg-white/10'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -133,10 +139,10 @@ export default function Header({ onBookAppointment }: HeaderProps) {
                     isActive
                       ? isScrolled
                         ? 'text-primary-600 bg-primary-50'
-                        : 'text-primary-600 bg-primary-100/60'
+                        : 'text-white bg-white/15'
                       : isScrolled
                         ? 'text-foreground-600 hover:text-primary-600 hover:bg-primary-50'
-                        : 'text-foreground-700 hover:text-primary-600 hover:bg-primary-100/40'
+                        : 'text-white/90 hover:text-white hover:bg-white/10'
                   }`}
                   aria-current={isActive ? 'true' : undefined}
                 >
@@ -149,8 +155,8 @@ export default function Header({ onBookAppointment }: HeaderProps) {
           <div className="hidden md:block">
             <motion.button
               onClick={onBookAppointment}
-              className="px-5 py-2.5 bg-primary-500 text-white rounded-full text-sm font-semibold whitespace-nowrap cursor-pointer btn-luxury"
-              whileHover={{ scale: 1.05, y: -1 }}
+              className="px-5 py-2.5 bg-primary-500 text-white rounded-full text-sm font-button font-semibold whitespace-nowrap cursor-pointer btn-luxury"
+              whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
             >
               Book Appointment
@@ -160,7 +166,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden w-10 h-10 flex items-center justify-center rounded-lg cursor-pointer transition-colors duration-300 ${
-              isScrolled ? 'text-foreground-800 hover:bg-background-100' : 'text-foreground-800 hover:bg-primary-100/40'
+              isScrolled ? 'text-foreground-800 hover:bg-background-100' : 'text-white hover:bg-white/10'
             }`}
             aria-label="Toggle menu"
           >
@@ -174,7 +180,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
             isMobileMenuOpen ? 'max-h-[600px] pb-4' : 'max-h-0'
           }`}
         >
-          <div className={`rounded-2xl p-3 space-y-1 ${isScrolled ? 'bg-white shadow-lg border border-background-200' : 'bg-white/90 backdrop-blur-xl shadow-lg'}`}>
+          <div className={`rounded-2xl p-3 space-y-1 ${isScrolled ? 'bg-white shadow-lg border border-background-200' : 'bg-white/95 shadow-lg'}`}>
             {menuItems.map((item) => {
               const isContactLink = item.href.startsWith('/');
               const sectionId = item.href.replace('#', '');
@@ -191,9 +197,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
                     className={`block w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap cursor-pointer ${
                       isActive
                         ? 'text-primary-600 bg-primary-50'
-                        : isScrolled
-                          ? 'text-foreground-600 hover:text-primary-600 hover:bg-primary-50'
-                          : 'text-foreground-700 hover:text-primary-600 hover:bg-primary-100/40'
+                        : 'text-foreground-600 hover:text-primary-600 hover:bg-primary-50'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -209,12 +213,8 @@ export default function Header({ onBookAppointment }: HeaderProps) {
                   onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }}
                   className={`block w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap cursor-pointer ${
                     isActive
-                      ? isScrolled
-                        ? 'text-primary-600 bg-primary-50'
-                        : 'text-primary-600 bg-primary-100/60'
-                      : isScrolled
-                        ? 'text-foreground-600 hover:text-primary-600 hover:bg-primary-50'
-                        : 'text-foreground-700 hover:text-primary-600 hover:bg-primary-100/40'
+                      ? 'text-primary-600 bg-primary-50'
+                      : 'text-foreground-600 hover:text-primary-600 hover:bg-primary-50'
                   }`}
                   aria-current={isActive ? 'true' : undefined}
                 >
