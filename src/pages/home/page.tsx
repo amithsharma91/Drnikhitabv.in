@@ -35,8 +35,7 @@ export default function Home() {
 
     const style = document.createElement('style');
     style.textContent = `
-      html { scroll-behavior: smooth; }
-      body { font-family: 'Inter', sans-serif; }
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
       ::selection { background-color: rgba(216, 140, 165, 0.2); color: #2D3748; }
       ::-webkit-scrollbar { width: 8px; }
       ::-webkit-scrollbar-track { background: #FFF8FB; }
