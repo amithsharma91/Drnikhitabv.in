@@ -75,21 +75,20 @@ export default {
         },
         fontFamily: {
           heading: ['Cormorant Garamond', 'serif'],
-          subheading: ['Playfair Display', 'serif'],
-          body: ['Inter', 'sans-serif'],
-          sans: ['Inter', 'sans-serif'],
+          body: ['Plus Jakarta Sans', 'sans-serif'],
+          sans: ['Plus Jakarta Sans', 'sans-serif'],
           display: ['Cormorant Garamond', 'serif'],
-          serif: ['Playfair Display', 'serif'],
+          button: ['Manrope', 'sans-serif'],
         },
         animation: {
-          'fade-up': 'fadeUp 0.7s ease-out forwards',
-          'fade-in': 'fadeIn 0.5s ease-out forwards',
-          'scale-in': 'scaleIn 0.5s ease-out forwards',
-          'spin-slow': 'spin 20s linear infinite',
+          'fade-up': 'fadeUp 0.6s ease-out forwards',
+          'fade-in': 'fadeIn 0.4s ease-out forwards',
+          'scale-in': 'scaleIn 0.4s ease-out forwards',
+          'marquee-scroll': 'marqueeScroll var(--marquee-duration, 30s) linear infinite',
         },
         keyframes: {
           fadeUp: {
-            '0%': { opacity: '0', transform: 'translateY(30px)' },
+            '0%': { opacity: '0', transform: 'translateY(20px)' },
             '100%': { opacity: '1', transform: 'translateY(0)' },
           },
           fadeIn: {
@@ -97,12 +96,12 @@ export default {
             '100%': { opacity: '1' },
           },
           scaleIn: {
-            '0%': { opacity: '0', transform: 'scale(0.9)' },
+            '0%': { opacity: '0', transform: 'scale(0.95)' },
             '100%': { opacity: '1', transform: 'scale(1)' },
           },
-          spin: {
-            from: { transform: 'rotate(0deg)' },
-            to: { transform: 'rotate(360deg)' },
+          marqueeScroll: {
+            '0%': { transform: 'translateX(0)' },
+            '100%': { transform: 'translateX(-50%)' },
           },
         },
       },
