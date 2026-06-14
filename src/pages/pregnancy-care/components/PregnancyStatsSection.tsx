@@ -42,13 +42,12 @@ function StatItem({ stat, index, isVisible }: { stat: { value: number; suffix: s
       className="text-center px-4 py-6 relative group cursor-default"
       initial={{ opacity: 0, y: 20 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="relative inline-block">
         <div className={`font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-${color}-500 mb-2 tabular-nums tracking-tight`}>
           {count}{stat.suffix}
         </div>
-        <div className={`absolute inset-0 bg-${color}-500/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150 animate-glow-pulse`}></div>
       </div>
       <p className={`text-foreground-600 text-xs md:text-sm font-medium transition-colors duration-300 group-hover:text-${color}-600`}>
         {stat.label}
