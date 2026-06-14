@@ -85,7 +85,7 @@ export default function CareerTimelineSection() {
                     {milestone.highlight && (
                       <div className="bg-accent-50/60 border-l-[3px] border-accent-400 rounded-r-lg px-3 py-1.5">
                         <p className="text-xs font-medium text-accent-700 flex items-start gap-1.5">
-                          <i className="ri-sparkling-line text-accent-500 mt-0.5 flex-shrink-0 animate-pulse-soft"></i>
+                          <i className="ri-sparkling-line text-accent-500 mt-0.5 flex-shrink-0"></i>
                           {milestone.highlight}
                         </p>
                       </div>
