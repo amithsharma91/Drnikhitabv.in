@@ -95,12 +95,12 @@ export default function CareTreatmentsSection() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-3 left-3 w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary-500 group-hover:scale-110 transition-all duration-400">
+                <div className="absolute top-3 left-3 w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/90 flex items-center justify-center group-hover:bg-primary-500 group-hover:scale-110 transition-all duration-400">
                   <i className={`${treatment.icon} text-primary-500 text-base md:text-lg group-hover:text-white transition-colors duration-300`}></i>
                 </div>
                 {/* Learn More button slides in on hover */}
                 <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-400">
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-primary-600 text-xs font-semibold">
+                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/90 text-primary-600 text-xs font-semibold">
                     Learn More
                     <i className="ri-arrow-right-line text-xs"></i>
                   </span>
@@ -127,7 +127,7 @@ export default function CareTreatmentsSection() {
           <motion.button
             onClick={() => { navigate('/services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="px-7 py-3 bg-primary-500 text-white rounded-full text-sm md:text-base font-semibold whitespace-nowrap cursor-pointer btn-luxury inline-flex items-center space-x-2"
-            whileHover={{ scale: 1.05, y: -2 }}
+            whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
           >
             <span>View All Treatments</span>
