@@ -48,6 +48,7 @@ export default function MasonryGallerySection() {
   }, [lightboxIndex, closeLightbox, goToPrev, goToNext]);
 
   const lightboxImage = lightboxIndex !== null ? filtered[lightboxIndex] : null;
+  const hasImages = filtered.length > 0;
 
   return (
     <section id="gallery-masonry" className="py-14 md:py-20 bg-white">
@@ -73,7 +74,6 @@ export default function MasonryGallerySection() {
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              layout
             >
               {cat.label}
             </motion.button>
@@ -81,21 +81,19 @@ export default function MasonryGallerySection() {
         </div>
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-5">
-          <AnimatePresence mode="popLayout">
-            {filtered.map((image, i) => (
+          {hasImages ? (
+            filtered.map((image, i) => (
               <motion.div
                 key={image.id}
                 className="break-inside-avoid mb-4 md:mb-5 group cursor-pointer"
                 onClick={() => openLightbox(i)}
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
                 transition={{
                   duration: 0.5,
                   delay: i * 0.05,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                layout
               >
                 <div className="relative rounded-2xl overflow-hidden bg-background-100">
                   <img
@@ -104,7 +102,6 @@ export default function MasonryGallerySection() {
                     className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     loading="lazy"
                   />
-                  {/* Glass overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-end p-4 md:p-5">
                     <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
                       <h3 className="text-white text-sm font-semibold">{image.title}</h3>
@@ -113,29 +110,26 @@ export default function MasonryGallerySection() {
                       </p>
                     </div>
                   </div>
-                  {/* View icon */}
                   <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100">
                     <i className="ri-zoom-in-line text-foreground-700 text-sm"></i>
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </AnimatePresence>
+            ))
+          ) : (
+            <motion.div
+              className="text-center py-16"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <i className="ri-image-line text-foreground-300 text-5xl mb-4 block"></i>
+              <p className="text-foreground-400 text-sm">No images found in this category.</p>
+            </motion.div>
+          )}
         </div>
-
-        {filtered.length === 0 && (
-          <motion.div
-            className="text-center py-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <i className="ri-image-line text-foreground-300 text-5xl mb-4 block"></i>
-            <p className="text-foreground-400 text-sm">No images found in this category.</p>
-          </motion.div>
-        )}
       </div>
 
-      {/* Lightbox with animation */}
+      {/* Lightbox */}
       <AnimatePresence>
         {lightboxImage && (
           <motion.div
