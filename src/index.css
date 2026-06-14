@@ -1,179 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --font-heading: 'Cormorant Garamond', 'Georgia', serif;
-    --font-subheading: 'Playfair Display', 'Georgia', serif;
-    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
-    --font-label: 'Inter', 'Helvetica Neue', sans-serif;
-  }
-}
-
-/* ==================== KEYFRAMES ==================== */
-
-/* Fade up — scroll-triggered entrance */
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Fade in */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* Scale in */
-@keyframes scaleIn {
-  0% { opacity: 0; transform: scale(0.92); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-/* Spin — loading spinner only */
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Shimmer — star rating glow */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-/* Float — subtle background movement */
-@keyframes float {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-  50% { transform: translateY(-20px) scale(1.02); opacity: 0.8; }
-}
-
-/* Pulse-soft — play button */
-@keyframes pulse-soft {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.85; }
-}
-
-/* Ripple — button click */
-@keyframes ripple {
-  0% { transform: scale(0); opacity: 0.6; }
-  100% { transform: scale(4); opacity: 0; }
-}
-
-/* Slide-up — hero entrance */
-@keyframes slideUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Glow pulse — card border */
-@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(216, 140, 165, 0); }
-  50% { box-shadow: 0 0 20px 2px rgba(216, 140, 165, 0.15); }
-}
-
-/* ==================== UTILITY CLASSES ==================== */
-
-@layer utilities {
-  .animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
-  .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
-  .animate-scale-in { animation: scaleIn 0.4s ease-out forwards; }
-  .animate-spin-slow { animation: spin 20s linear infinite; }
-  .animate-shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-  }
-  .animate-float { animation: float 8s ease-in-out infinite; }
-  .animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
-  .animate-slide-up { animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-  .animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
-}
-
-/* ==================== PREFERS REDUCED MOTION ==================== */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ==================== SMOOTH SCROLLING ==================== */
-html {
-  scroll-behavior: smooth;
-}
-
-/* ==================== LUXURY CARD HOVER ==================== */
-@layer utilities {
-  .card-luxury {
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
-  }
-  .card-luxury:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -12px rgba(216, 140, 165, 0.15), 0 8px 16px -8px rgba(0, 0, 0, 0.08);
-  }
-  .card-luxury:hover .card-image {
-    transform: scale(1.05);
-  }
-  .card-image {
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .btn-luxury {
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-luxury::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.15) 0%, transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .btn-luxury:hover::after {
-    opacity: 1;
-  }
-  .btn-luxury:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px -6px rgba(216, 140, 165, 0.3);
-  }
-  .btn-luxury:active {
-    transform: translateY(0) scale(0.98);
-  }
-}
-
-/* ==================== SECTION DIVIDER ==================== */
-@layer utilities {
-  .section-divider {
-    position: relative;
-  }
-  .section-divider::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(to bottom, rgba(255,248,251,0.5), transparent);
-    pointer-events: none;
-  }
-}
-
-/* ==================== GLASS OVERLAY ==================== */
-@layer utilities {
-  .glass-overlay {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  .glass-dark {
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-}
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Nikhita B Vadvadgi | Best Gynecologist in Bangalore | Women's Health & Fertility Specialist</title>
+    <meta name="description" content="Dr. Nikhita B Vadvadgi — Best Gynecologist in Bangalore. Expert Obstetrics, Laparoscopic Surgery, Fertility & Pregnancy Care. 12+ years experience. Book now.">
+    <meta name="keywords" content="gynecologist Bangalore, obstetrician Bangalore, women's health specialist, laparoscopic surgeon Basavanagudi, infertility specialist Bangalore, high-risk pregnancy care, Dr. Nikhita Vadvadgi, best gynecologist Basavanagudi, Banashankari gynecologist, drnikhitabv">
+    <meta name="author" content="Dr. Nikhita B Vadvadgi">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://drnikhitabv.in/">
+    <meta name="geo.position" content="12.9516;77.5855">
+    <meta name="geo.region" content="IN-KA">
+    <meta name="geo.placename" content="Bangalore, Karnataka, India">
+    <meta name="ICBM" content="12.9516, 77.5855">
+    <meta name="Last-modified" content="2026-06-12">
+    <meta property="og:title" content="Dr. Nikhita B Vadvadgi | Best Gynecologist in Bangalore | Women's Health & Fertility Specialist">
+    <meta property="og:description" content="Expert Obstetrics, Gynecology, Laparoscopic Surgery and Fertility Care in Bangalore. 12+ years experience. Book your consultation today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://drnikhitabv.in/">
+    <meta property="og:site_name" content="Dr. Nikhita B Vadvadgi">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:image" content="https://drnikhitabv.in/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Nikhita B Vadvadgi | Best Gynecologist in Bangalore">
+    <meta name="twitter:description" content="Expert women's healthcare in Bangalore. Obstetrics, Gynecology, Laparoscopic Surgery and Fertility Care.">
+    <meta name="twitter:image" content="https://drnikhitabv.in/og-image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalOrganization",
+        "name": "Dr. Nikhita B Vadvadgi — Obstetrician, Gynecologist & Laparoscopic Surgeon",
+        "description": "Dr. Nikhita B Vadvadgi is a leading Consultant Obstetrician, Gynecologist, Laparoscopic Surgeon and Infertility Specialist in Bangalore offering expert women's healthcare, high-risk pregnancy management, fertility care, and minimally invasive surgery.",
+        "url": "https://drnikhitabv.in",
+        "telephone": "+91-8050816686",
+        "email": "drnikhita@example.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "South End Speciality Clinic",
+          "addressLocality": "Basavanagudi",
+          "addressRegion": "Karnataka",
+          "postalCode": "560004",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "12.9516",
+          "longitude": "77.5855"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "10:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "16:00",
+            "closes": "21:00"
+          }
+        ],
+        "medicalSpecialty": ["Obstetrics", "Gynecology", "LaparoscopicSurgery", "ReproductiveMedicine"],
+        "priceRange": "₹₹",
+        "sameAs": [
+          "https://wa.me/918050816686"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dr. Nikhita B Vadvadgi",
+        "url": "https://drnikhitabv.in",
+        "description": "Best Gynecologist & Obstetrician in Bangalore — Expert women's healthcare, fertility care, and minimally invasive surgery.",
+        "inLanguage": "en-IN"
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
