@@ -47,10 +47,10 @@ export default function PageHeroSection({
   const renderCTA = (cta: PageHeroProps['primaryCTA'], variant: 'primary' | 'secondary') => {
     const isPrimary = variant === 'primary';
     const className = isPrimary
-      ? 'bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:shadow-primary-600/30 btn-luxury'
+      ? 'bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/10 hover:shadow-primary-600/20 btn-luxury font-button font-semibold'
       : cta.variant === 'solid'
-        ? 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/20 btn-luxury'
-        : 'border-2 border-white/60 text-white hover:bg-white/15 hover:border-white/80 btn-luxury';
+        ? 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/10 btn-luxury font-button font-semibold'
+        : 'border-2 border-white/60 text-white hover:bg-white/15 hover:border-white/80 btn-luxury font-button font-semibold';
 
     const icon = cta.icon || (isPrimary ? 'ri-calendar-check-line' : 'ri-whatsapp-line');
 
@@ -68,8 +68,8 @@ export default function PageHeroSection({
           target={cta.href.startsWith('http') || cta.href.startsWith('https') || cta.href.startsWith('tel:') || cta.href.startsWith('mailto:') ? '_blank' : undefined}
           rel={cta.href.startsWith('http') || cta.href.startsWith('https') ? 'noopener noreferrer' : undefined}
           className={`w-full sm:w-auto px-7 md:px-8 py-3 md:py-3.5 rounded-full text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap cursor-pointer ${className}`}
-          whileHover={{ scale: 1.03, y: -2 }}
-          whileTap={{ scale: 0.98 }}
+          whileHover={{ scale: 1.02, y: -1 }}
+          whileTap={{ scale: 0.99 }}
         >
           {content}
         </motion.a>
@@ -80,8 +80,8 @@ export default function PageHeroSection({
       <motion.button
         onClick={cta.onClick}
         className={`w-full sm:w-auto px-7 md:px-8 py-3 md:py-3.5 rounded-full text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap cursor-pointer ${className}`}
-        whileHover={{ scale: 1.03, y: -2 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={{ scale: 1.02, y: -1 }}
+        whileTap={{ scale: 0.99 }}
       >
         {content}
       </motion.button>
@@ -103,16 +103,9 @@ export default function PageHeroSection({
           className="w-full h-full object-cover"
           loading="eager"
         />
-        {/* Floating light gradients */}
-        <div className="absolute inset-0 animate-float" style={{ animationDuration: '12s' }}>
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary-300/10 blur-[100px]" />
-        </div>
-        <div className="absolute inset-0 animate-float" style={{ animationDuration: '15s', animationDelay: '2s' }}>
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent-300/10 blur-[100px]" />
-        </div>
-        {/* Strong Rose Blush + Sky Blue gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#D88CA5]/75 via-[#D88CA5]/50 to-[#A8D8F0]/60"></div>
-        {/* Additional white-bottom fade */}
+        {/* Strong but elegant Rose Blush + Sky Blue gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#D88CA5]/70 via-[#D88CA5]/45 to-[#A8D8F0]/55"></div>
+        {/* Soft bottom fade to white */}
         <div className="absolute bottom-0 left-0 right-0 h-20 md:h-28 bg-gradient-to-t from-[#FFF8FB]/85 to-transparent"></div>
       </motion.div>
 
@@ -137,25 +130,25 @@ export default function PageHeroSection({
 
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/85 backdrop-blur-sm border border-white/60 mb-4 md:mb-6"
+            className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/90 border border-white/60 mb-4 md:mb-6"
             initial={{ opacity: 0, y: 15 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <i className={`${badgeIcon} text-primary-500 text-xs md:text-sm mr-1.5 md:mr-2`}></i>
-            <span className="text-foreground-700 text-xs md:text-sm font-semibold tracking-wide">{badgeText}</span>
+            <i className={`${badgeIcon} text-[#D88CA5] text-xs md:text-sm mr-1.5 md:mr-2`}></i>
+            <span className="text-[#D88CA5] text-xs md:text-sm font-semibold tracking-wide">{badgeText}</span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
             className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.15] mb-3 md:mb-5 max-w-4xl drop-shadow-md"
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             {headline}
             {headlineHighlight && (
-              <span className="text-[#FFF8FB]"> {headlineHighlight}</span>
+              <span className="gradient-text"> {headlineHighlight}</span>
             )}
           </motion.h1>
 
