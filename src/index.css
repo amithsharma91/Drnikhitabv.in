@@ -1,95 +1,115 @@
-<!doctype html>
-<html lang="en-IN">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr. Nikhita B Vadvadgi | Best Gynecologist in Bangalore | Women's Health & Fertility Specialist</title>
-    <meta name="description" content="Dr. Nikhita B Vadvadgi — Best Gynecologist in Bangalore. Expert Obstetrics, Laparoscopic Surgery, Fertility & Pregnancy Care. 12+ years experience. Book now.">
-    <meta name="keywords" content="gynecologist Bangalore, obstetrician Bangalore, women's health specialist, laparoscopic surgeon Basavanagudi, infertility specialist Bangalore, high-risk pregnancy care, Dr. Nikhita Vadvadgi, best gynecologist Basavanagudi, Banashankari gynecologist, drnikhitabv">
-    <meta name="author" content="Dr. Nikhita B Vadvadgi">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <link rel="canonical" href="https://drnikhitabv.in/">
-    <meta name="geo.position" content="12.9516;77.5855">
-    <meta name="geo.region" content="IN-KA">
-    <meta name="geo.placename" content="Bangalore, Karnataka, India">
-    <meta name="ICBM" content="12.9516, 77.5855">
-    <meta name="Last-modified" content="2026-06-12">
-    <meta property="og:title" content="Dr. Nikhita B Vadvadgi | Best Gynecologist in Bangalore | Women's Health & Fertility Specialist">
-    <meta property="og:description" content="Expert Obstetrics, Gynecology, Laparoscopic Surgery and Fertility Care in Bangalore. 12+ years experience. Book your consultation today.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://drnikhitabv.in/">
-    <meta property="og:site_name" content="Dr. Nikhita B Vadvadgi">
-    <meta property="og:locale" content="en_IN">
-    <meta property="og:image" content="https://drnikhitabv.in/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dr. Nikhita B Vadvadgi | Best Gynecologist in Bangalore">
-    <meta name="twitter:description" content="Expert women's healthcare in Bangalore. Obstetrics, Gynecology, Laparoscopic Surgery and Fertility Care.">
-    <meta name="twitter:image" content="https://drnikhitabv.in/og-image.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css">
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "MedicalOrganization",
-        "name": "Dr. Nikhita B Vadvadgi — Obstetrician, Gynecologist & Laparoscopic Surgeon",
-        "description": "Dr. Nikhita B Vadvadgi is a leading Consultant Obstetrician, Gynecologist, Laparoscopic Surgeon and Infertility Specialist in Bangalore offering expert women's healthcare, high-risk pregnancy management, fertility care, and minimally invasive surgery.",
-        "url": "https://drnikhitabv.in",
-        "telephone": "+91-8050816686",
-        "email": "drnikhita@example.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "South End Speciality Clinic",
-          "addressLocality": "Basavanagudi",
-          "addressRegion": "Karnataka",
-          "postalCode": "560004",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "12.9516",
-          "longitude": "77.5855"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:00",
-            "closes": "10:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "16:00",
-            "closes": "21:00"
-          }
-        ],
-        "medicalSpecialty": ["Obstetrics", "Gynecology", "LaparoscopicSurgery", "ReproductiveMedicine"],
-        "priceRange": "₹₹",
-        "sameAs": [
-          "https://wa.me/918050816686"
-        ]
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Dr. Nikhita B Vadvadgi",
-        "url": "https://drnikhitabv.in",
-        "description": "Best Gynecologist & Obstetrician in Bangalore — Expert women's healthcare, fertility care, and minimally invasive surgery.",
-        "inLanguage": "en-IN"
-      }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+    --font-body: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+    --font-label: 'Manrope', 'Helvetica Neue', sans-serif;
+    --color-heading: #2D3748;
+    --color-body: #4A5568;
+    --color-badge: #D88CA5;
+    --color-accent-start: #D88CA5;
+    --color-accent-end: #A8D8F0;
+  }
+}
+
+/* ==================== KEYFRAMES (Premium Only) ==================== */
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+@layer utilities {
+  .animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
+  .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+  .animate-scale-in { animation: scaleIn 0.4s ease-out forwards; }
+}
+
+/* ==================== GRADIENT TEXT ==================== */
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #D88CA5 0%, #A8D8F0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ==================== PREFERS REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==================== SCROLLING ==================== */
+/* Native scroll — no smooth-behavior on html, it causes mobile jank */
+
+/* ==================== PREMIUM CARD HOVER ==================== */
+@layer utilities {
+  .card-luxury {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-luxury:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px -8px rgba(216, 140, 165, 0.12);
+    scale: 1.02;
+  }
+  .card-image {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* ==================== PREMIUM BUTTON ==================== */
+@layer utilities {
+  .btn-luxury {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  .btn-luxury:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px -4px rgba(216, 140, 165, 0.25);
+  }
+  .btn-luxury:active {
+    transform: translateY(0);
+  }
+}
+
+/* ==================== MOBILE PERFORMANCE ==================== */
+@media (max-width: 767px) {
+  .card-luxury:hover {
+    transform: none;
+    box-shadow: none;
+    scale: 1;
+  }
+  .btn-luxury:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    backdrop-filter: blur(6px);
+  }
+}
