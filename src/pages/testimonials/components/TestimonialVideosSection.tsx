@@ -83,9 +83,10 @@ export default function TestimonialVideosSection() {
               key={video.id}
               className="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-background-200 hover:border-primary-300 hover:-translate-y-1 transition-all duration-400"
               style={{
+                transition: `all 0.4s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out`,
+                transitionDelay: `${0.06 + i * 0.08}s, ${0.06 + i * 0.08}s, ${0.06 + i * 0.08}s`,
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(25px)',
-                transition: `all 0.5s ease-out ${0.06 + i * 0.08}s`,
               }}
             >
               <div className="relative aspect-video overflow-hidden">
@@ -100,7 +101,7 @@ export default function TestimonialVideosSection() {
                     <i className="ri-play-fill text-primary-500 text-2xl md:text-3xl ml-0.5"></i>
                   </div>
                 </div>
-                <div className="absolute bottom-3 right-3 bg-black/75 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-1.5">
+                <div className="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-1.5">
                   <i className="ri-volume-up-line text-[10px]"></i>
                   {video.duration}
                 </div>
