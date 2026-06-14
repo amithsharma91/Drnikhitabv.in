@@ -47,7 +47,7 @@ function StatCard({ stat, index }: { stat: { value: number; suffix: string; labe
         <div className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary-500 mb-2 tabular-nums tracking-tight">
           {count}{stat.suffix}
         </div>
-        <div className="absolute inset-0 bg-primary-500/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150"></div>
+        <div className="absolute inset-0 bg-primary-500/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150"></div>
       </div>
       <p className="text-foreground-600 text-xs md:text-sm font-medium transition-colors duration-300 group-hover:text-primary-600">
         {stat.label}
