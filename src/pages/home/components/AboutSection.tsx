@@ -38,7 +38,7 @@ export default function AboutSection() {
               <div className="absolute -inset-2 md:-inset-3 bg-gradient-to-br from-primary-200/50 to-secondary-200/40 rounded-2xl rotate-2 transition-transform duration-500 group-hover:rotate-3"></div>
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                 <img
-                  src="https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/a4c7d0f9-74a6-4da7-94ab-5b2fed3e7524_IMG_20260613_010036.png"
+                  src="https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/ec78a88f-8f70-4e21-89b9-f3b1d02fe58c_compressed_IMG_20260617_220911.webp"
                   alt="Dr. Nikhita B Vadvadgi — About the Doctor"
                   title="Dr. Nikhita B Vadvadgi — Obstetrician and Gynecologist in Bangalore"
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
