@@ -18,7 +18,7 @@ export default function HysteroscopicSurgeryHeroSection() {
       }}
       secondaryCTA={{
         text: 'WhatsApp Now',
-        href: 'https://wa.me/918050816686',
+        href: 'https://wa.me/918197301494',
         icon: 'ri-whatsapp-line',
         variant: 'solid',
       }}
