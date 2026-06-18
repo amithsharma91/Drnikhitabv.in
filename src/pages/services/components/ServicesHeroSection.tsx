@@ -16,7 +16,7 @@ export default function ServicesHeroSection() {
       }}
       secondaryCTA={{
         text: 'WhatsApp Now',
-        href: 'https://wa.me/918050816686',
+        href: 'https://wa.me/918197301494',
         variant: 'solid',
       }}
     />
