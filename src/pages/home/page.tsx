@@ -12,7 +12,9 @@ import TrustSection from './components/TrustSection';
 import WhyChooseSection from './components/WhyChooseSection';
 import PatientJourneySection from './components/PatientJourneySection';
 import TestimonialsSection from './components/TestimonialsSection';
+import HomeGallerySection from './components/HomeGallerySection';
 import FAQSection from './components/FAQSection';
+import HomeMapSection from './components/HomeMapSection';
 import CTASection from './components/CTASection';
 import AppointmentModal from './components/AppointmentModal';
 
@@ -75,6 +77,8 @@ export default function Home() {
         <TrustSection />
         <PatientJourneySection />
         <TestimonialsSection />
+        <HomeGallerySection />
+        <HomeMapSection />
         <FAQSection />
         <CTASection onBookAppointment={openModal} />
 
