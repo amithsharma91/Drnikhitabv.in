@@ -68,7 +68,7 @@ export const ovulationDisorderCards = [
     description: 'Functional hypothalamic amenorrhea occurs when the brain\'s signaling to the ovaries is disrupted, often due to physical or emotional stress, significant weight changes, or excessive exercise. This condition is reversible with appropriate lifestyle modifications and supportive care.',
     effects: ['Absent or very irregular periods', 'Low estrogen levels', 'Stress-related hormonal disruption', 'Low BMI or rapid weight loss', 'Excessive exercise patterns'],
     management: 'Stress reduction techniques, nutritional rehabilitation, moderated exercise routines, cognitive behavioral support, and gradual restoration of ovulatory cycles.',
-    image: 'https://readdy.ai/api/search-image?query=Supportive%20female%20doctor%20in%20a%20luxury%20wellness%20clinic%20discussing%20stress%20management%20and%20hormonal%20health%20with%20a%20woman%2C%20calm%20rose%20and%20cream%20interior%2C%20gentle%20warm%20lighting%2C%20holistic%20healthcare%20atmosphere%2C%20editorial%20photography%20style&width=1000&height=700&seq=fertility-hypothalamic-02&orientation=landscape',
+    image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/26d19f8e-6cce-42e9-baaa-55b3a8b526bd_file_0000000071a472089eda18c614835b26.png',
   },
   {
     id: 'premature-ovarian',
@@ -77,7 +77,7 @@ export const ovulationDisorderCards = [
     description: 'Ovarian reserve naturally declines with age, but some women experience premature decline. Assessment through AMH levels and antral follicle count helps quantify remaining egg supply and guides fertility planning, including discussion of timelines and treatment options.',
     effects: ['Reduced AMH levels', 'Fewer antral follicles', 'Shortened menstrual cycles', 'Difficulty conceiving', 'Family history considerations'],
     management: 'Ovarian reserve testing, fertility preservation discussion, individualized treatment timelines, and coordination with advanced reproductive technologies when needed.',
-    image: 'https://readdy.ai/api/search-image?query=Mature%20woman%20consulting%20with%20empathetic%20female%20fertility%20specialist%20in%20a%20luxury%20clinic%20about%20ovarian%20reserve%20and%20conception%20options%2C%20rose%20blush%20decor%2C%20warm%20professional%20atmosphere%2C%20supportive%20consultation%2C%20editorial%20healthcare%20photography&width=1000&height=700&seq=fertility-ovarian-reserve-03&orientation=landscape',
+    image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/3bfaf60f-88cf-43d7-a837-f31872cbdf95_file_00000000724c720b81c40a5066bf87a5.png',
   },
   {
     id: 'thyroid',
@@ -132,45 +132,6 @@ export const journeyTimelineSteps = [
     title: 'Follow-Up Care',
     duration: 'Ongoing',
     description: 'Regular follow-up consultations to track progress, adjust treatment as needed, celebrate milestones, and provide continuity of care from fertility through early pregnancy.',
-  },
-];
-
-export const fertilityGallery = [
-  {
-    id: 1,
-    title: 'Couple Consultation',
-    category: 'Fertility Care',
-    image: 'https://readdy.ai/api/search-image?query=Hopeful%20couple%20having%20an%20in%20depth%20fertility%20consultation%20with%20a%20compassionate%20female%20doctor%20in%20a%20luxury%20clinic%2C%20rose%20blush%20and%20cream%20interior%20design%2C%20warm%20natural%20lighting%2C%20tissue%20box%20and%20fresh%20flowers%20on%20desk%2C%20editorial%20healthcare%20photography&width=800&height=1000&seq=fertility-gallery-couple-01&orientation=portrait',
-  },
-  {
-    id: 2,
-    title: 'Fertility Discussion',
-    category: 'Consultation',
-    image: 'https://readdy.ai/api/search-image?query=Close%20up%20of%20female%20fertility%20specialist%20explaining%20treatment%20options%20to%20a%20woman%20patient%20in%20a%20premium%20clinic%2C%20rose%20and%20cream%20decor%2C%20gentle%20warm%20lighting%2C%20reassuring%20professional%20atmosphere%2C%20editorial%20photography%20style%20with%20soft%20focus&width=800&height=600&seq=fertility-gallery-discussion-02&orientation=landscape',
-  },
-  {
-    id: 3,
-    title: 'Doctor Guidance',
-    category: 'Expert Care',
-    image: 'https://readdy.ai/api/search-image?query=Female%20doctor%20in%20a%20luxury%20women%20healthcare%20clinic%20guiding%20a%20patient%20through%20fertility%20treatment%20plan%20on%20a%20tablet%2C%20warm%20rose%20blush%20interior%2C%20modern%20elegant%20medical%20setting%2C%20soft%20natural%20daylight%2C%20hopeful%20supportive%20atmosphere%2C%20editorial%20photography&width=800&height=1000&seq=fertility-gallery-guidance-03&orientation=portrait',
-  },
-  {
-    id: 4,
-    title: 'Pregnancy Success',
-    category: 'Success Story',
-    image: 'https://readdy.ai/api/search-image?query=Joyful%20pregnant%20woman%20with%20her%20partner%20in%20a%20warm%20consultation%20room%20with%20female%20doctor%20celebrating%20pregnancy%20success%2C%20luxury%20clinic%20interior%20with%20rose%20and%20cream%20tones%2C%20soft%20natural%20light%2C%20emotional%20happy%20moment%2C%20editorial%20healthcare%20photography&width=800&height=600&seq=fertility-gallery-success-04&orientation=landscape',
-  },
-  {
-    id: 5,
-    title: 'Women Wellness',
-    category: 'Consultation',
-    image: 'https://readdy.ai/api/search-image?query=Professional%20female%20gynecologist%20in%20a%20premium%20clinic%20having%20a%20wellness%20consultation%20with%20a%20woman%2C%20rose%20blush%20and%20cream%20interior%20design%2C%20fresh%20flower%20arrangement%2C%20warm%20ambient%20lighting%2C%20caring%20supportive%20atmosphere%2C%20editorial%20photography&width=800&height=600&seq=fertility-gallery-wellness-05&orientation=landscape',
-  },
-  {
-    id: 6,
-    title: 'Modern Fertility Care',
-    category: 'Clinic',
-    image: 'https://readdy.ai/api/search-image?query=Beautiful%20modern%20fertility%20clinic%20consultation%20room%20with%20rose%20and%20cream%20interior%2C%20comfortable%20seating%2C%20medical%20diagrams%20on%20wall%2C%20ultrasound%20machine%2C%20fresh%20flowers%2C%20warm%20elegant%20lighting%2C%20premium%20healthcare%20facility%2C%20editorial%20interior%20photography&width=800&height=1000&seq=fertility-gallery-clinic-06&orientation=portrait',
   },
 ];
 
