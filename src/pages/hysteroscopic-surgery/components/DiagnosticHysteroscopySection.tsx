@@ -15,9 +15,9 @@ export default function DiagnosticHysteroscopySection() {
         >
           <div className="w-full lg:w-1/2 lg:order-2">
             <img
-              src="https://readdy.ai/api/search-image?query=Professional%20female%20gynecological%20specialist%20in%20white%20coat%20seated%20at%20consultation%20desk%20discussing%20diagnostic%20hysteroscopy%20with%20woman%20patient%20in%20premium%20clinic%20room%2C%20HD%20monitor%20on%20wall%20displaying%20clear%20healthy%20uterine%20cavity%20with%20visible%20fallopian%20tube%20openings%2C%20modern%20medical%20examination%20chair%20in%20background%2C%20warm%20natural%20lighting%20through%20window%2C%20clean%20contemporary%20women%20healthcare%20environment%20with%20soft%20feminine%20aesthetic%2C%20realistic%20editorial%20medical%20photography%20with%20professional%20reassuring%20doctor%20patient%20conversation&width=700&height=500&seq=hsc-diagnostic-v3&orientation=landscape"
+              src="https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/acc1cd1b-c625-4a31-83e9-487ca901ffd8_IMG_20260617_160002.jpg"
               alt="Diagnostic Hysteroscopy"
-              className="w-full rounded-2xl object-cover h-[320px] sm:h-[380px] md:h-[440px]"
+              className="w-full rounded-2xl object-contain h-auto"
               loading="lazy"
             />
           </div>
