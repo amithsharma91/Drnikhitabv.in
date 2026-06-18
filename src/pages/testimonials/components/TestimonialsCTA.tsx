@@ -33,7 +33,7 @@ export default function TestimonialsCTA() {
               Book Appointment
             </button>
             <a
-              href="https://wa.me/918050816686"
+              href="https://wa.me/918197301494"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-3.5 bg-green-500 text-white rounded-full text-sm md:text-base font-semibold hover:bg-green-600 transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105 flex items-center justify-center gap-2"
