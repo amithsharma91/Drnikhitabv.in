@@ -30,8 +30,8 @@ export default function OvulationDisordersSection() {
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 }`}
               >
-                <div className="h-48 sm:h-56 overflow-hidden">
-                  <img src={card.image} alt={card.title} className="w-full h-full object-cover" loading="lazy" />
+                <div className="h-auto overflow-hidden">
+                  <img src={card.image} alt={card.title} className="w-full h-auto object-contain" loading="lazy" />
                 </div>
                 <div className="p-5 md:p-6">
                   <div className="flex items-center space-x-3 mb-3">
