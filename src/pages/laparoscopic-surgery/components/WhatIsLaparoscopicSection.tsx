@@ -14,9 +14,9 @@ export default function WhatIsLaparoscopicSection() {
         >
           <div className="w-full lg:w-1/2">
             <img
-              src="https://readdy.ai/api/search-image?query=Professional%20female%20surgeon%20wearing%20surgical%20scrubs%20and%20white%20coat%20standing%20beside%20modern%20laparoscopic%20tower%20equipment%20in%20premium%20operating%20theatre%2C%20pointing%20to%20HD%20monitor%20displaying%20clear%20magnified%20pelvic%20anatomy%20view%2C%20advanced%20keyhole%20surgery%20instruments%20arranged%20on%20sterile%20tray%2C%20clean%20bright%20surgical%20environment%20with%20soft%20natural%20window%20light%20and%20overhead%20LED%20surgical%20lights%2C%20realistic%20editorial%20medical%20photography%20with%20professional%20healthcare%20setting%20and%20warm%20clinical%20tones&width=700&height=500&seq=lap-whatis-v3&orientation=landscape"
+              src="https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/fae8eb9e-b955-4593-9a8a-bfbedad0e608_IMG_20260617_152505.jpg"
               alt="What Is Laparoscopic Surgery"
-              className="w-full rounded-2xl object-cover h-[320px] sm:h-[380px] md:h-[440px]"
+              className="w-full rounded-2xl object-contain h-auto"
               loading="lazy"
             />
           </div>
