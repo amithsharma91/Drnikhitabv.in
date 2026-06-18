@@ -1,12 +1,12 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { doctorInfo, opdTimings } from '@/mocks/doctorData';
+import { clinicLocations, opdTimings } from '@/mocks/doctorData';
 import { motion } from 'framer-motion';
 
 export default function ContactDetailsSection() {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
-  const clinicAddress = 'South End Speciality Clinic, Basavanagudi, Bangalore 560004';
-  const googleMapsUrl = 'https://www.google.com/maps/search/South+End+Speciality+Clinic+Basavanagudi+Bangalore+560004';
+  const clinicAddress = '42, S End Rd, Near Mecon Limited, Basavanagudi, Bengaluru, Karnataka 560004';
+  const googleMapsUrl = 'https://www.google.com/maps/search/WHPG%2BQR+Bengaluru%2C+Karnataka';
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -43,7 +43,7 @@ export default function ContactDetailsSection() {
         </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6">
-          {/* Doctor Info Card */}
+          {/* Doctor Contact Card */}
           <motion.div
             className="bg-white rounded-2xl border border-background-200 p-6 md:p-7 flex flex-col items-center text-center hover:border-primary-200 transition-all duration-300 card-luxury"
             custom={0}
@@ -54,42 +54,12 @@ export default function ContactDetailsSection() {
             <div className="w-16 h-16 md:w-18 md:h-18 rounded-2xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center mb-4">
               <i className="ri-user-heart-line text-primary-500 text-2xl md:text-3xl"></i>
             </div>
-            <h3 className="font-heading text-lg font-semibold text-foreground-900 mb-1">{doctorInfo.name}</h3>
-            <p className="text-foreground-500 text-xs leading-relaxed mb-5">{doctorInfo.title}</p>
+            <h3 className="font-heading text-lg font-semibold text-foreground-900 mb-1">Dr. Nikhita B Vadvadgi</h3>
+            <p className="text-foreground-500 text-xs leading-relaxed mb-5">Consultant Obstetrician & Gynecologist</p>
 
             <div className="w-full space-y-3">
               <motion.a
-                href={`tel:${doctorInfo.doctorPhone.replace(/\s/g, '')}`}
-                className="flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-background-50 hover:bg-primary-50 transition-colors duration-200 cursor-pointer group card-luxury"
-                whileHover={{ scale: 1.02, x: 4 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-9 h-9 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-colors duration-200">
-                  <i className="ri-phone-line text-primary-500 text-base group-hover:text-white transition-colors duration-200"></i>
-                </div>
-                <div className="text-left">
-                  <p className="text-[11px] text-foreground-400 uppercase tracking-wide">Dr. Direct Number</p>
-                  <p className="text-sm font-semibold text-foreground-900">{doctorInfo.doctorPhone}</p>
-                </div>
-              </motion.a>
-
-              <motion.a
-                href={`tel:${doctorInfo.clinicPhone.replace(/\s/g, '')}`}
-                className="flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-background-50 hover:bg-secondary-50 transition-colors duration-200 cursor-pointer group card-luxury"
-                whileHover={{ scale: 1.02, x: 4 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-9 h-9 rounded-lg bg-secondary-100 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary-500 transition-colors duration-200">
-                  <i className="ri-hospital-line text-secondary-600 text-base group-hover:text-white transition-colors duration-200"></i>
-                </div>
-                <div className="text-left">
-                  <p className="text-[11px] text-foreground-400 uppercase tracking-wide">Clinic Number</p>
-                  <p className="text-sm font-semibold text-foreground-900">{doctorInfo.clinicPhone}</p>
-                </div>
-              </motion.a>
-
-              <motion.a
-                href={`https://wa.me/${doctorInfo.whatsapp}?text=Hello%20Dr.%20Nikhita%2C%20I%20would%20like%20to%20book%20an%20appointment.`}
+                href="https://wa.me/918197301494?text=Hello%20Dr.%20Nikhita%2C%20I%20would%20like%20to%20enquire%20about%20an%20appointment."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-background-50 hover:bg-green-50 transition-colors duration-200 cursor-pointer group card-luxury"
@@ -100,8 +70,23 @@ export default function ContactDetailsSection() {
                   <i className="ri-whatsapp-line text-green-600 text-base group-hover:text-white transition-colors duration-200"></i>
                 </div>
                 <div className="text-left">
-                  <p className="text-[11px] text-foreground-400 uppercase tracking-wide">WhatsApp</p>
-                  <p className="text-sm font-semibold text-foreground-900">+91 80508 16686</p>
+                  <p className="text-[11px] text-foreground-400 uppercase tracking-wide">Doctor WhatsApp</p>
+                  <p className="text-sm font-semibold text-foreground-900">8197301494</p>
+                </div>
+              </motion.a>
+
+              <motion.a
+                href="tel:+918050816686"
+                className="flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-background-50 hover:bg-secondary-50 transition-colors duration-200 cursor-pointer group card-luxury"
+                whileHover={{ scale: 1.02, x: 4 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-9 h-9 rounded-lg bg-secondary-100 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary-500 transition-colors duration-200">
+                  <i className="ri-phone-line text-secondary-600 text-base group-hover:text-white transition-colors duration-200"></i>
+                </div>
+                <div className="text-left">
+                  <p className="text-[11px] text-foreground-400 uppercase tracking-wide">Clinic Reception</p>
+                  <p className="text-sm font-semibold text-foreground-900">8050816686</p>
                 </div>
               </motion.a>
             </div>
@@ -163,7 +148,10 @@ export default function ContactDetailsSection() {
             </div>
 
             <p className="text-sm text-foreground-600 leading-relaxed mb-5 flex-1">
-              {clinicAddress}
+              42, S End Rd,<br />
+              Near Mecon Limited,<br />
+              Basavanagudi, Bengaluru,<br />
+              Karnataka 560004
             </p>
 
             <motion.div
@@ -172,15 +160,15 @@ export default function ContactDetailsSection() {
               transition={{ duration: 0.3 }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d77.575!3d12.945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzQyLjAiTiA3N8KwMzQnMzAuMCJF!5e0!3m2!1sen!2sin!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.03!2d77.5747!3d12.9449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zV0hQRytRUiBCZW5nYWx1cnU!5e0!3m2!1sen!2sin!4v1"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="South End Speciality Clinic Location"
-                aria-label="Google Maps location of South End Speciality Clinic, Basavanagudi, Bangalore"
+                title="South End Speciality Clinic — Basavanagudi, Bengaluru"
+                aria-label="Google Maps location of South End Speciality Clinic, 42 S End Rd, Basavanagudi, Bengaluru"
               ></iframe>
             </motion.div>
 
