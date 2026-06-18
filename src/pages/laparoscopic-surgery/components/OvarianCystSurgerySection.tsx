@@ -17,7 +17,7 @@ export default function OvarianCystSurgerySection() {
             <img
               src="https://readdy.ai/api/search-image?query=Professional%20female%20surgeon%20in%20white%20coat%20seated%20at%20desk%20in%20premium%20consultation%20room%20discussing%20ovarian%20cyst%20treatment%20options%20with%20woman%20patient%20holding%20anatomical%20model%2C%20digital%20tablet%20on%20desk%20showing%20ovary%20ultrasound%20image%2C%20warm%20natural%20daylight%20streaming%20through%20large%20window%2C%20modern%20feminine%20healthcare%20clinic%20interior%20with%20soft%20pastel%20decor%2C%20realistic%20editorial%20medical%20photography%20with%20genuine%20doctor%20patient%20interaction%20and%20professional%20compassionate%20atmosphere&width=700&height=500&seq=lap-cyst-v3&orientation=landscape"
               alt="Laparoscopic Ovarian Cyst Surgery"
-              className="w-full rounded-2xl object-cover h-[320px] sm:h-[380px] md:h-[440px]"
+              className="w-full rounded-2xl object-contain h-auto"
               loading="lazy"
             />
           </div>
