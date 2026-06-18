@@ -38,7 +38,7 @@ export default function ServicesCTA() {
             <span>Book Appointment</span>
           </button>
           <a
-            href="https://wa.me/918050816686"
+            href="https://wa.me/918197301494"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 md:px-8 md:py-3.5 rounded-full font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer whitespace-nowrap hover:scale-105 shadow-sm inline-flex items-center space-x-2"
