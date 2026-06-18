@@ -14,9 +14,9 @@ export default function WhatIsHysteroscopySection() {
         >
           <div className="w-full lg:w-1/2">
             <img
-              src="https://readdy.ai/api/search-image?query=Professional%20female%20gynecologist%20in%20white%20coat%20standing%20beside%20modern%20hysteroscopy%20equipment%20tower%20in%20premium%20outpatient%20procedure%20suite%2C%20pointing%20to%20HD%20monitor%20displaying%20clear%20uterine%20cavity%20view%2C%20thin%20hysteroscope%20instrument%20visible%20on%20sterile%20tray%2C%20bright%20clean%20contemporary%20clinical%20environment%20with%20warm%20balanced%20lighting%2C%20comfortable%20modern%20women%20healthcare%20setting%20with%20soft%20feminine%20aesthetic%2C%20realistic%20editorial%20medical%20photography%20with%20professional%20reassuring%20atmosphere&width=700&height=500&seq=hsc-whatis-v3&orientation=landscape"
+              src="https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/b492751a-de8c-44c1-97d2-455ca61eabb7_IMG_20260617_153539.jpg"
               alt="What Is Hysteroscopy"
-              className="w-full rounded-2xl object-cover h-[320px] sm:h-[380px] md:h-[440px]"
+              className="w-full rounded-2xl object-contain h-auto"
               loading="lazy"
             />
           </div>
