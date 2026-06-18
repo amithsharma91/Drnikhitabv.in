@@ -53,7 +53,7 @@ export default function StickyCTA() {
             <span>Book Appointment</span>
           </button>
           <a
-            href="https://wa.me/918050816686?text=Hello%20Dr.%20Nikhita%2C%20I%20would%20like%20to%20book%20an%20appointment."
+            href="https://wa.me/918197301494?text=Hello%20Dr.%20Nikhita%2C%20I%20would%20like%20to%20enquire%20about%20an%20appointment."
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 w-11 h-11 rounded-xl bg-green-100 flex items-center justify-center hover:bg-green-500 transition-colors duration-300 cursor-pointer group"
