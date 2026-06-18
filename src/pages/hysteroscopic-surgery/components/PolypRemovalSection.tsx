@@ -15,9 +15,9 @@ export default function PolypRemovalSection() {
         >
           <div className="w-full lg:w-1/2">
             <img
-              src="https://readdy.ai/api/search-image?query=Professional%20female%20gynecologist%20in%20white%20coat%20having%20consultation%20with%20woman%20patient%20in%20bright%20modern%20premium%20clinic%20examination%20room%2C%20digital%20tablet%20showing%20hysteroscopic%20view%20of%20endometrial%20polyp%20on%20screen%2C%20doctor%20explaining%20procedure%20with%20caring%20professional%20demeanor%2C%20warm%20natural%20daylight%20through%20large%20windows%2C%20clean%20contemporary%20women%20healthcare%20interior%20with%20soft%20pastel%20tones%2C%20realistic%20editorial%20medical%20photography%20with%20genuine%20doctor%20patient%20interaction%20and%20reassuring%20clinical%20atmosphere&width=700&height=500&seq=hsc-polyp-v3&orientation=landscape"
+              src="https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/04a39f1c-4b5c-42ac-88ac-ee3faa826945_IMG_20260617_155746.jpg"
               alt="Hysteroscopic Polyp Removal"
-              className="w-full rounded-2xl object-cover h-[320px] sm:h-[380px] md:h-[440px]"
+              className="w-full rounded-2xl object-contain h-auto"
               loading="lazy"
             />
           </div>
