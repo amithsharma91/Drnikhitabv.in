@@ -63,7 +63,7 @@ export default function ConditionsTreatedSection() {
                           <img
                             src={condition.image}
                             alt={condition.title}
-                            className="w-full rounded-xl object-cover h-[180px]"
+                            className="w-full rounded-xl object-contain h-auto"
                             loading="lazy"
                           />
                         </div>
