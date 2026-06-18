@@ -1,16 +1,12 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { galleryCategories, galleryImages } from '@/mocks/galleryPageData';
+import { galleryImages } from '@/mocks/galleryPageData';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function MasonryGallerySection() {
-  const [activeCategory, setActiveCategory] = useState('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.05 });
-
-  const filtered = activeCategory === 'all'
-    ? galleryImages
-    : galleryImages.filter((img) => img.category === activeCategory);
 
   const openLightbox = useCallback((index: number) => {
     setLightboxIndex(index);
@@ -25,16 +21,16 @@ export default function MasonryGallerySection() {
   const goToPrev = useCallback(() => {
     setLightboxIndex((prev) => {
       if (prev === null) return null;
-      return prev === 0 ? filtered.length - 1 : prev - 1;
+      return prev === 0 ? galleryImages.length - 1 : prev - 1;
     });
-  }, [filtered.length]);
+  }, []);
 
   const goToNext = useCallback(() => {
     setLightboxIndex((prev) => {
       if (prev === null) return null;
-      return prev === filtered.length - 1 ? 0 : prev + 1;
+      return prev === galleryImages.length - 1 ? 0 : prev + 1;
     });
-  }, [filtered.length]);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -47,8 +43,11 @@ export default function MasonryGallerySection() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxIndex, closeLightbox, goToPrev, goToNext]);
 
-  const lightboxImage = lightboxIndex !== null ? filtered[lightboxIndex] : null;
-  const hasImages = filtered.length > 0;
+  const handleImageLoad = useCallback((id: number) => {
+    setLoadedImages((prev) => new Set(prev).add(id));
+  }, []);
+
+  const lightboxImage = lightboxIndex !== null ? galleryImages[lightboxIndex] : null;
 
   return (
     <section id="gallery-masonry" className="py-14 md:py-20 bg-white">
@@ -59,73 +58,53 @@ export default function MasonryGallerySection() {
         }`}
       >
         <div className="text-center mb-8 md:mb-10">
-          <span className="text-secondary-600 text-xs md:text-sm font-semibold tracking-widest uppercase">Gallery Categories</span>
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 md:mb-12">
-          {galleryCategories.map((cat) => (
-            <motion.button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap cursor-pointer ${
-                activeCategory === cat.id
-                  ? 'bg-secondary-500 text-white shadow-sm'
-                  : 'bg-background-50 text-foreground-600 hover:bg-background-100 hover:text-foreground-800'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {cat.label}
-            </motion.button>
-          ))}
+          <span className="inline-block text-secondary-600 text-xs md:text-sm font-semibold tracking-widest uppercase relative">
+            Our Gallery
+            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-10 h-0.5 bg-secondary-300/50 rounded-full"></span>
+          </span>
+          <h2 className="font-heading text-2xl md:text-4xl font-bold text-foreground-900 mt-3 mb-4">
+            Moments of Care
+          </h2>
+          <p className="text-foreground-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            A glimpse into our clinic, our team, and the beautiful moments we share with our patients.
+          </p>
         </div>
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-5">
-          {hasImages ? (
-            filtered.map((image, i) => (
-              <motion.div
-                key={image.id}
-                className="break-inside-avoid mb-4 md:mb-5 group cursor-pointer"
-                onClick={() => openLightbox(i)}
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: i * 0.05,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <div className="relative rounded-2xl overflow-hidden bg-background-100">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-end p-4 md:p-5">
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
-                      <h3 className="text-white text-sm font-semibold">{image.title}</h3>
-                      <p className="text-white/70 text-xs mt-0.5">
-                        {galleryCategories.find((c) => c.id === image.category)?.label}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100">
-                    <i className="ri-zoom-in-line text-foreground-700 text-sm"></i>
+          {galleryImages.map((image, i) => (
+            <motion.div
+              key={image.id}
+              className="group cursor-pointer rounded-2xl overflow-hidden bg-background-100 shadow-sm break-inside-avoid mb-4 md:mb-5"
+              onClick={() => openLightbox(i)}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: i * 0.03,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className={`w-full h-auto object-cover transition-all duration-700 ease-out md:group-hover:scale-105 ${
+                    loadedImages.has(image.id) ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  loading="lazy"
+                  onLoad={() => handleImageLoad(image.id)}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 md:opacity-0 md:group-hover:opacity-100 transition-all duration-400 flex items-end p-4 md:p-5">
+                  <div className="transform translate-y-4 md:group-hover:translate-y-0 transition-transform duration-400">
+                    <h3 className="text-white text-sm font-semibold">{image.title}</h3>
                   </div>
                 </div>
-              </motion.div>
-            ))
-          ) : (
-            <motion.div
-              className="text-center py-16"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <i className="ri-image-line text-foreground-300 text-5xl mb-4 block"></i>
-              <p className="text-foreground-400 text-sm">No images found in this category.</p>
+                <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform scale-50 md:group-hover:scale-100">
+                  <i className="ri-zoom-in-line text-foreground-700 text-sm"></i>
+                </div>
+              </div>
             </motion.div>
-          )}
+          ))}
         </div>
       </div>
 
@@ -191,11 +170,8 @@ export default function MasonryGallerySection() {
               />
               <div className="text-center mt-4">
                 <h3 className="text-white text-sm md:text-base font-semibold">{lightboxImage.title}</h3>
-                <p className="text-white/60 text-xs mt-1">
-                  {galleryCategories.find((c) => c.id === lightboxImage.category)?.label}
-                </p>
                 <p className="text-white/40 text-xs mt-2">
-                  {lightboxIndex !== null ? `${lightboxIndex + 1} / ${filtered.length}` : ''}
+                  {lightboxIndex !== null ? `${lightboxIndex + 1} / ${galleryImages.length}` : ''}
                 </p>
               </div>
             </motion.div>
