@@ -4,7 +4,6 @@ import FloatingWhatsApp from '@/components/feature/FloatingWhatsApp';
 import PageSEO from '@/components/feature/PageSEO';
 import GalleryHeroSection from './components/GalleryHeroSection';
 import MasonryGallerySection from './components/MasonryGallerySection';
-import VideoGallerySection from './components/VideoGallerySection';
 import GalleryCTA from './components/GalleryCTA';
 
 export default function Gallery() {
@@ -20,7 +19,6 @@ export default function Gallery() {
 
       <GalleryHeroSection />
       <MasonryGallerySection />
-      <VideoGallerySection />
       <GalleryCTA />
 
       <Footer />
