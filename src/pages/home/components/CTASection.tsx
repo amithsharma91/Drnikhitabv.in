@@ -57,7 +57,7 @@ export default function CTASection({ onBookAppointment }: CTASectionProps) {
             </span>
           </motion.button>
           <motion.a
-            href="https://wa.me/918050816686?text=Hello%20Dr.%20Nikhita%2C%20I%20would%20like%20to%20consult%20you."
+            href="https://wa.me/918197301494?text=Hello%20Dr.%20Nikhita%2C%20I%20would%20like%20to%20enquire%20about%20an%20appointment."
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 bg-white border-2 border-foreground-200 text-foreground-800 rounded-full text-sm md:text-base font-semibold whitespace-nowrap cursor-pointer flex items-center gap-2 btn-luxury"
