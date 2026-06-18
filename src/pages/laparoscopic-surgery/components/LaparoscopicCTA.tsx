@@ -40,7 +40,7 @@ export default function LaparoscopicCTA({ onBookAppointment }: LaparoscopicCTAPr
               Book Consultation
             </button>
             <a
-              href="https://wa.me/918050816686"
+              href="https://wa.me/918197301494"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-3.5 bg-white/15 border border-white/30 text-white rounded-full text-sm md:text-base font-semibold hover:bg-white/25 transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105"
