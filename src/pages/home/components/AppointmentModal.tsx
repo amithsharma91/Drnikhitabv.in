@@ -1,4 +1,4 @@
-import { useState, useCallback, FormEvent } from 'react';
+import { useState, useCallback } from 'react';
 
 interface AppointmentModalProps {
   isOpen: boolean;
@@ -6,44 +6,52 @@ interface AppointmentModalProps {
 }
 
 export default function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    reason: '',
+    preferredDate: '',
+    preferredTime: '',
+    message: '',
+  });
 
-  const handleSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError('');
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch('https://readdy.ai/api/form/d8j4at9hmtkvo7bfr4j0', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-        form.reset();
-      } else {
-        setError('Something went wrong. Please try calling us directly.');
-      }
-    } catch {
-      setError('Network error. Please try again or call us directly.');
-    } finally {
-      setIsSubmitting(false);
-    }
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   }, []);
+
+  const handleSendWhatsApp = useCallback(() => {
+    const message = `Hello Dr. Nikitha,
+
+I would like to enquire about an appointment.
+
+Name: ${formData.name}
+
+Phone: ${formData.phone}
+
+Email: ${formData.email || 'Not provided'}
+
+Reason: ${formData.reason}
+
+Preferred Date & Time:
+${formData.preferredDate} at ${formData.preferredTime || 'Not specified'}
+
+Message:
+${formData.message || 'No additional message'}
+
+Please contact me regarding my appointment enquiry.
+
+Thank you.`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/918197301494?text=${encodedMessage}`, '_blank');
+  }, [formData]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Book Appointment">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Send WhatsApp Enquiry">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-foreground-900/60"
@@ -61,130 +69,146 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
           <i className="ri-close-line text-foreground-600"></i>
         </button>
 
-        {submitted ? (
-          <div className="p-6 md:p-10 text-center">
-            <div className="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
-              <i className="ri-check-line text-green-500 text-xl md:text-2xl"></i>
+        <div className="p-5 md:p-8">
+          <h3 className="font-heading text-lg md:text-2xl font-semibold text-foreground-900 mb-1">WhatsApp Enquiry</h3>
+          <p className="text-foreground-500 text-sm mb-5 md:mb-6">Fill in your details and send directly to our WhatsApp.</p>
+
+          <div className="space-y-3 md:space-y-4">
+            <div>
+              <label htmlFor="modal-name" className="block text-sm font-medium text-foreground-700 mb-1.5">
+                Full Name <span className="text-primary-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="modal-name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 placeholder-foreground-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200"
+                placeholder="Enter your full name"
+              />
             </div>
-            <h3 className="font-heading text-lg md:text-xl font-semibold text-foreground-900 mb-2">Thank You!</h3>
-            <p className="text-foreground-600 text-sm mb-6">
-              Your appointment request has been received. Our team will contact you shortly to confirm your appointment.
-            </p>
-            <button
-              onClick={onClose}
-              className="px-6 py-2.5 bg-primary-500 text-white rounded-full text-sm font-medium hover:bg-primary-600 transition-colors duration-200 whitespace-nowrap cursor-pointer"
-            >
-              Close
-            </button>
-          </div>
-        ) : (
-          <div className="p-5 md:p-8">
-            <h3 className="font-heading text-lg md:text-2xl font-semibold text-foreground-900 mb-1">Book Appointment</h3>
-            <p className="text-foreground-500 text-sm mb-5 md:mb-6">Fill in your details and we&apos;ll get back to you shortly.</p>
 
-            <form
-              onSubmit={handleSubmit}
-              data-readdy-form="true"
-              className="space-y-3 md:space-y-4"
-            >
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground-700 mb-1.5">
-                  Full Name <span className="text-primary-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 placeholder-foreground-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200"
-                  placeholder="Enter your full name"
-                />
-              </div>
+            <div>
+              <label htmlFor="modal-phone" className="block text-sm font-medium text-foreground-700 mb-1.5">
+                Phone Number <span className="text-primary-500">*</span>
+              </label>
+              <input
+                type="tel"
+                id="modal-phone"
+                name="phone"
+                required
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 placeholder-foreground-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200"
+                placeholder="+91 XXXXX XXXXX"
+              />
+            </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-foreground-700 mb-1.5">
-                  Phone Number <span className="text-primary-500">*</span>
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 placeholder-foreground-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200"
-                  placeholder="+91 XXXXX XXXXX"
-                />
-              </div>
+            <div>
+              <label htmlFor="modal-email" className="block text-sm font-medium text-foreground-700 mb-1.5">
+                Email Address <span className="text-foreground-400 font-normal">(Optional)</span>
+              </label>
+              <input
+                type="email"
+                id="modal-email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 placeholder-foreground-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200"
+                placeholder="your@email.com"
+              />
+            </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground-700 mb-1.5">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 placeholder-foreground-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="reason" className="block text-sm font-medium text-foreground-700 mb-1.5">
-                  Reason for Consultation <span className="text-primary-500">*</span>
-                </label>
-                <select
-                  id="reason"
-                  name="reason"
-                  required
-                  className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200 cursor-pointer"
-                >
-                  <option value="">Select a reason</option>
-                  <option value="Pregnancy Care">Pregnancy Care</option>
-                  <option value="Gynecology Consultation">Gynecology Consultation</option>
-                  <option value="Fertility Consultation">Fertility Consultation</option>
-                  <option value="Laparoscopic Surgery">Laparoscopic Surgery</option>
-                  <option value="General Checkup">General Checkup</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground-700 mb-1.5">
-                  Message (Optional)
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={3}
-                  maxLength={500}
-                  className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 placeholder-foreground-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200 resize-none"
-                  placeholder="Briefly describe your concern..."
-                ></textarea>
-                <p className="text-xs text-foreground-400 mt-1">Maximum 500 characters</p>
-              </div>
-
-              {error && (
-                <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
-                  {error}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full py-3 bg-primary-500 text-white rounded-xl text-sm font-semibold hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 whitespace-nowrap cursor-pointer"
+            <div>
+              <label htmlFor="modal-reason" className="block text-sm font-medium text-foreground-700 mb-1.5">
+                Reason For Consultation <span className="text-primary-500">*</span>
+              </label>
+              <select
+                id="modal-reason"
+                name="reason"
+                required
+                value={formData.reason}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200 cursor-pointer"
               >
-                {isSubmitting ? (
-                  <span className="flex items-center justify-center">
-                    <i className="ri-loader-4-line animate-spin mr-2"></i> Submitting...
-                  </span>
-                ) : (
-                  'Confirm Booking'
-                )}
-              </button>
-            </form>
+                <option value="">Select a reason</option>
+                <option value="Pregnancy Care">Pregnancy Care</option>
+                <option value="Gynecology Consultation">Gynecology Consultation</option>
+                <option value="Fertility Consultation">Fertility Consultation</option>
+                <option value="Menopause Care">Menopause Care</option>
+                <option value="Laparoscopic Surgery">Laparoscopic Surgery</option>
+                <option value="Hysteroscopic Surgery">Hysteroscopic Surgery</option>
+                <option value="Second Opinion">Second Opinion</option>
+                <option value="General Consultation">General Consultation</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="modal-date" className="block text-sm font-medium text-foreground-700 mb-1.5">
+                Preferred Date <span className="text-primary-500">*</span>
+              </label>
+              <input
+                type="date"
+                id="modal-date"
+                name="preferredDate"
+                required
+                value={formData.preferredDate}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200 cursor-pointer"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="modal-time" className="block text-sm font-medium text-foreground-700 mb-1.5">
+                Preferred Time <span className="text-primary-500">*</span>
+              </label>
+              <input
+                type="time"
+                id="modal-time"
+                name="preferredTime"
+                required
+                value={formData.preferredTime}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200 cursor-pointer"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="modal-message" className="block text-sm font-medium text-foreground-700 mb-1.5">
+                Message <span className="text-foreground-400 font-normal">(Optional)</span>
+              </label>
+              <textarea
+                id="modal-message"
+                name="message"
+                rows={3}
+                maxLength={500}
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 rounded-xl border border-background-200 bg-background-50 text-sm text-foreground-900 placeholder-foreground-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all duration-200 resize-none"
+                placeholder="Briefly describe your concern..."
+              ></textarea>
+              <p className="text-xs text-foreground-400 mt-1">Maximum 500 characters</p>
+            </div>
+
+            <button
+              onClick={handleSendWhatsApp}
+              disabled={!formData.name || !formData.phone || !formData.reason || !formData.preferredDate || !formData.preferredTime}
+              className="w-full py-3 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg"
+              style={{ backgroundColor: '#25D366', color: '#FFFFFF' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#1ebe57')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#25D366')}
+            >
+              <i className="ri-whatsapp-line text-lg"></i>
+              Send Enquiry on WhatsApp
+            </button>
+
+            <p className="text-center text-xs text-foreground-400 mt-2">
+              Your enquiry will be sent directly to our WhatsApp. We typically respond within a few hours during clinic hours.
+            </p>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
