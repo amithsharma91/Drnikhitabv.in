@@ -17,7 +17,7 @@ export default function FibroidRemovalSection() {
             <img
               src="https://readdy.ai/api/search-image?query=Professional%20female%20gynecological%20surgeon%20in%20white%20coat%20consulting%20woman%20patient%20in%20premium%20clinic%20room%2C%20digital%20display%20on%20wall%20showing%20uterine%20cavity%20diagram%20with%20submucosal%20fibroid%20highlighted%2C%20doctor%20explaining%20treatment%20options%20with%20compassionate%20expression%2C%20warm%20natural%20daylight%20through%20window%2C%20modern%20healthcare%20environment%20with%20soft%20blush%20and%20cream%20feminine%20decor%2C%20realistic%20editorial%20medical%20photography%20with%20authentic%20reassuring%20doctor%20patient%20consultation&width=700&height=500&seq=hsc-fibroid-v3&orientation=landscape"
               alt="Hysteroscopic Fibroid Removal"
-              className="w-full rounded-2xl object-cover h-[320px] sm:h-[380px] md:h-[440px]"
+              className="w-full rounded-2xl object-contain h-auto"
               loading="lazy"
             />
           </div>
