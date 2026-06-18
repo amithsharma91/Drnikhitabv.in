@@ -17,7 +17,7 @@ export default function FibroidSurgerySection() {
             <img
               src="https://readdy.ai/api/search-image?query=Professional%20female%20surgeon%20in%20white%20coat%20having%20compassionate%20consultation%20with%20woman%20patient%20in%20premium%20clinic%20room%2C%20anatomical%20diagram%20of%20uterus%20with%20fibroids%20displayed%20on%20digital%20screen%20behind%20them%2C%20warm%20natural%20daylight%20through%20window%2C%20comfortable%20modern%20healthcare%20environment%20with%20soft%20blush%20and%20cream%20decor%2C%20realistic%20editorial%20medical%20photography%20with%20authentic%20doctor%20patient%20discussion%20and%20reassuring%20professional%20atmosphere&width=700&height=500&seq=lap-fibroid-v3&orientation=landscape"
               alt="Laparoscopic Fibroid Surgery"
-              className="w-full rounded-2xl object-cover h-[320px] sm:h-[380px] md:h-[440px]"
+              className="w-full rounded-2xl object-contain h-auto"
               loading="lazy"
             />
           </div>
