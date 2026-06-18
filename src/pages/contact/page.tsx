@@ -21,7 +21,7 @@ export default function Contact() {
     <main className="min-h-screen bg-background-50 overflow-x-hidden">
       <PageSEO
         title="Contact & Book Appointment | Dr. Nikhita B Vadvadgi | Gynecologist Bangalore"
-        description="Book your appointment with Dr. Nikhita B Vadvadgi at South End Speciality Clinic, Basavanagudi, Bangalore. Call +91 80508 16686 or fill the online form. Mon-Sat: 9AM-10AM & 4PM-9PM."
+        description="Book your appointment with Dr. Nikhita B Vadvadgi at South End Speciality Clinic, 42 S End Rd, Basavanagudi, Bengaluru. WhatsApp: 8197301494, Call: 8050816686. Mon-Sat: 9AM-10AM & 4PM-9PM."
         keywords="book gynecologist appointment Bangalore, Dr. Nikhita contact number, gynecologist clinic Basavanagudi, women's health consultation Bangalore, obstetrician appointment"
         canonicalPath="/contact"
       />
