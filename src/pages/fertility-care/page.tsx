@@ -16,7 +16,6 @@ import FertilityCounsellingSection from './components/FertilityCounsellingSectio
 import PersonalizedTreatmentSection from './components/PersonalizedTreatmentSection';
 import SuccessJourneySection from './components/SuccessJourneySection';
 import FertilityStatsSection from './components/FertilityStatsSection';
-import FertilityGallerySection from './components/FertilityGallerySection';
 import FertilityCTA from './components/FertilityCTA';
 import FAQSection from '@/pages/home/components/FAQSection';
 
@@ -48,7 +47,6 @@ export default function FertilityCare() {
       <PersonalizedTreatmentSection />
       <SuccessJourneySection />
       <FertilityStatsSection />
-      <FertilityGallerySection />
       <FAQSection />
       <RelatedServicesSection services={relatedServicesMap['fertility-care']} />
       <FertilityCTA onBookAppointment={handleBookAppointment} />
