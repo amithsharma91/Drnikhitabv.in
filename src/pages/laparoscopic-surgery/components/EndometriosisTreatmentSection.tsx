@@ -17,7 +17,7 @@ export default function EndometriosisTreatmentSection() {
             <img
               src="https://readdy.ai/api/search-image?query=Professional%20female%20surgeon%20wearing%20white%20coat%20having%20empathetic%20conversation%20with%20woman%20patient%20in%20premium%20women%20health%20clinic%20consultation%20room%2C%20digital%20screen%20on%20wall%20showing%20pelvic%20anatomy%20with%20endometriosis%20lesions%20highlighted%2C%20comfortable%20modern%20medical%20environment%20with%20natural%20window%20light%20and%20soft%20warm%20artificial%20lighting%2C%20clean%20feminine%20aesthetic%20with%20blush%20and%20cream%20tones%2C%20realistic%20editorial%20healthcare%20photography%20with%20authentic%20compassionate%20doctor%20patient%20interaction&width=700&height=500&seq=lap-endo-v3&orientation=landscape"
               alt="Laparoscopic Endometriosis Treatment"
-              className="w-full rounded-2xl object-cover h-[320px] sm:h-[380px] md:h-[440px]"
+              className="w-full rounded-2xl object-contain h-auto"
               loading="lazy"
             />
           </div>
