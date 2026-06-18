@@ -1,11 +1,11 @@
 export const doctorInfo = {
   name: 'Dr. Nikhita B Vadvadgi',
   title: 'Consultant Obstetrician, Gynecologist, Laparoscopic Surgeon & Infertility Specialist',
-  location: 'Bangalore, India',
+  location: 'Bengaluru, Karnataka, India',
   phone: '+91 80508 16686',
   doctorPhone: '+91 81973 01494',
   clinicPhone: '+91 80508 16686',
-  whatsapp: '918050816686',
+  whatsapp: '918197301494',
   email: 'drnikhita@example.com',
   experience: '12+',
   qualifications: [
@@ -159,8 +159,8 @@ export const testimonials = [
 export const clinicLocations = [
   {
     name: 'South End Speciality Clinic',
-    address: 'Basavanagudi, Bangalore 560004',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d77.575!3d12.945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzQyLjAiTiA3N8KwMzQnMzAuMCJF!5e0!3m2!1sen!2sin!4v1',
+    address: '42, S End Rd, Near Mecon Limited, Basavanagudi, Bengaluru, Karnataka 560004',
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.03!2d77.5747!3d12.9449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zV0hQRytRUiBCZW5nYWx1cnU!5e0!3m2!1sen!2sin!4v1',
     phone: '+91 80508 16686',
     hours: 'Mon-Sat: 9AM-10AM, 4PM-9PM',
   },
@@ -201,7 +201,7 @@ export const faqData = [
   },
   {
     question: 'How can I book an appointment?',
-    answer: 'You can book an appointment by calling us at +91 80508 16686, sending a WhatsApp message to the same number, or using the "Book Appointment" button on our website. We offer consultations at South End Speciality Clinic (Basavanagudi), Monday through Saturday from 9:00 AM to 10:00 AM and 4:00 PM to 9:00 PM.',
+    answer: 'You can book an appointment by calling us at +91 80508 16686, sending a WhatsApp message to +91 81973 01494, or using the "Book Appointment" button on our website. We offer consultations at South End Speciality Clinic (Basavanagudi, Bengaluru), Monday through Saturday from 9:00 AM to 10:00 AM and 4:00 PM to 9:00 PM.',
   },
 ];
 
