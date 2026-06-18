@@ -50,7 +50,7 @@ export const relatedServicesMap: Record<string, RelatedService[]> = {
       icon: 'ri-seedling-line',
       description: 'Compassionate fertility evaluation, counseling, and personalized treatment for couples trying to conceive.',
       link: '/services/fertility-care',
-      image: 'https://readdy.ai/api/search-image?query=Hopeful%20couple%20consulting%20with%20female%20fertility%20specialist%20in%20a%20warm%20premium%20clinic%2C%20soft%20ambient%20lighting%2C%20cream%20and%20rose%20blush%20decor%2C%20caring%20professional%20atmosphere%2C%20editorial%20medical%20photography&width=600&height=400&seq=related-fertility-01&orientation=landscape',
+      image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/f43f8ddf-65cc-4e86-9a1c-8b5d518e7ea3_file_000000001d0c720b9b9a905138292395.png',
     },
     {
       id: 'family-planning',
@@ -84,7 +84,7 @@ export const relatedServicesMap: Record<string, RelatedService[]> = {
       icon: 'ri-seedling-line',
       description: 'Compassionate fertility evaluation, counseling, and personalized treatment for couples trying to conceive.',
       link: '/services/fertility-care',
-      image: 'https://readdy.ai/api/search-image?query=Supportive%20female%20fertility%20doctor%20having%20gentle%20consultation%20with%20hopeful%20couple%2C%20premium%20clinic%20setting%2C%20warm%20ambient%20lighting%2C%20cream%20and%20rose%20blush%20tones%2C%20caring%20professional%20environment%2C%20editorial%20photography&width=600&height=400&seq=related-fertility-02&orientation=landscape',
+      image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/f43f8ddf-65cc-4e86-9a1c-8b5d518e7ea3_file_000000001d0c720b9b9a905138292395.png',
     },
     {
       id: 'family-planning',
@@ -126,7 +126,7 @@ export const relatedServicesMap: Record<string, RelatedService[]> = {
       icon: 'ri-seedling-line',
       description: 'Compassionate fertility evaluation, counseling, and personalized treatment for couples trying to conceive.',
       link: '/services/fertility-care',
-      image: 'https://readdy.ai/api/search-image?query=Warm%20supportive%20consultation%20between%20female%20fertility%20specialist%20and%20hopeful%20couple%20in%20premium%20clinic%2C%20soft%20ambient%20lighting%2C%20cream%20and%20rose%20blush%20decor%2C%20caring%20therapeutic%20setting%2C%20editorial%20photography&width=600&height=400&seq=related-fertility-03&orientation=landscape',
+      image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/f43f8ddf-65cc-4e86-9a1c-8b5d518e7ea3_file_000000001d0c720b9b9a905138292395.png',
     },
     {
       id: 'menopause-care',
@@ -168,7 +168,7 @@ export const relatedServicesMap: Record<string, RelatedService[]> = {
       icon: 'ri-seedling-line',
       description: 'Compassionate fertility evaluation, counseling, and personalized treatment plans.',
       link: '/services/fertility-care',
-      image: 'https://readdy.ai/api/search-image?query=Couple%20having%20fertility%20consultation%20with%20compassionate%20female%20doctor%20in%20premium%20clinic%2C%20warm%20ambient%20lighting%2C%20cream%20and%20rose%20blush%20decor%2C%20hopeful%20supportive%20atmosphere%2C%20editorial%20medical%20photography&width=600&height=400&seq=related-fertility-04&orientation=landscape',
+      image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/f43f8ddf-65cc-4e86-9a1c-8b5d518e7ea3_file_000000001d0c720b9b9a905138292395.png',
     },
   ],
   'fertility-care': [
@@ -212,7 +212,7 @@ export const relatedServicesMap: Record<string, RelatedService[]> = {
       icon: 'ri-seedling-line',
       description: 'Compassionate fertility evaluation, counseling, and personalized treatment plans.',
       link: '/services/fertility-care',
-      image: 'https://readdy.ai/api/search-image?query=Hopeful%20couple%20in%20warm%20consultation%20with%20female%20fertility%20specialist%2C%20premium%20clinic%20with%20soft%20ambient%20lighting%2C%20cream%20and%20rose%20blush%20tones%2C%20caring%20professional%20atmosphere%2C%20editorial%20medical%20photography&width=600&height=400&seq=related-fertility-05&orientation=landscape',
+      image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/f43f8ddf-65cc-4e86-9a1c-8b5d518e7ea3_file_000000001d0c720b9b9a905138292395.png',
     },
     {
       id: 'pre-pregnancy-checkup',
@@ -372,7 +372,7 @@ export const relatedServicesMap: Record<string, RelatedService[]> = {
       icon: 'ri-seedling-line',
       description: 'Compassionate fertility evaluation, counseling, and personalized treatment plans.',
       link: '/services/fertility-care',
-      image: 'https://readdy.ai/api/search-image?query=Supportive%20female%20fertility%20doctor%20having%20gentle%20consultation%20with%20hopeful%20couple%2C%20premium%20clinic%20setting%2C%20warm%20ambient%20lighting%2C%20cream%20and%20rose%20blush%20tones%2C%20caring%20professional%20environment%2C%20editorial%20photography&width=600&height=400&seq=related-fertility-06&orientation=landscape',
+      image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/f43f8ddf-65cc-4e86-9a1c-8b5d518e7ea3_file_000000001d0c720b9b9a905138292395.png',
     },
   ],
   'hysteroscopic-surgery': [
@@ -406,7 +406,7 @@ export const relatedServicesMap: Record<string, RelatedService[]> = {
       icon: 'ri-seedling-line',
       description: 'Compassionate fertility evaluation, counseling, and personalized treatment plans.',
       link: '/services/fertility-care',
-      image: 'https://readdy.ai/api/search-image?query=Couple%20having%20fertility%20consultation%20with%20compassionate%20female%20doctor%20in%20premium%20clinic%2C%20warm%20ambient%20lighting%2C%20cream%20and%20rose%20blush%20tones%2C%20hopeful%20supportive%20atmosphere%2C%20editorial%20medical%20photography&width=600&height=400&seq=related-fertility-07&orientation=landscape',
+      image: 'https://storage.readdy-site.link/project_files/537556cb-a0de-4c81-8866-d48774229505/f43f8ddf-65cc-4e86-9a1c-8b5d518e7ea3_file_000000001d0c720b9b9a905138292395.png',
     },
   ],
 };
